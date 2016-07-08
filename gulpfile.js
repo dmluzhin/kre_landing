@@ -126,7 +126,7 @@ gulp.task('watch', function() {
 		gulp.start('js:build');
 	});
 	watch([path.watch.images], function(event, cb){
-		gulp.start('image:build');
+		gulp.start('images:build');
 	});
 	watch([path.watch.fonts], function(event, cb){
 		gulp.start('fonts:build');

@@ -1,0 +1,20 @@
+.b-main-offer {
+  position: relative;
+  min-width: 1200px;
+  width: 100%;
+  height: 478px;
+  background-color: $bg-black;
+}
+.l-inner {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.b-logo {
+  background: #9d1c20;
+  padding: 20px 50px 20px 50px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
