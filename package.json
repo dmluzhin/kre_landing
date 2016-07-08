@@ -1,0 +1,18 @@
+{
+  "name": "kre_landing.git",
+  "version": "1.0.0",
+  "description": "kre sales landing",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmluzhin/kre_landing.git"
+  },
+  "author": "d.m.luzhin",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  }
+}

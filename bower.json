@@ -1,0 +1,23 @@
+{
+  "name": "kre_landing.git",
+  "description": "kre sales landing",
+  "main": "gulpfile.js",
+  "authors": [
+    "d.m.luzhin"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dmluzhin/kre_landing",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "3.*"
+  }
+}
