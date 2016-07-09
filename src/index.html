@@ -12,53 +12,31 @@
 <body>
 	//= templates/head.html
 	//= templates/request.html
-	<div class="b-experience">
+	//= templates/experience.html
+	<footer class="b-footer">
 		<div class="l-inner">
-			<h3 class="b-title">Мы отлично знаем<br>рынок элитной недвижимости</h3>
-			<p class="b-elucidation_contact">Безукоризненная репутация в элитной недвижимости с 1995 года</p>
-			<div class="b-experience_inner j-slider-experience">
-				<div class="b-experience_item">
-					<div class="b-experience_icon">
-						<img src="images/icons/book.svg"/>
-					</div>
-					<div class="b-experience_item-content">
-						<p class="b-experience_title">Опыт</p>
-						<div class="b-experience_line"></div>
-						<p class="b-experience_text">Агентство существует с 1991 года, входит в число лидеров рынка элитной недвижимости. Мы знаем каждый дом. Умеем продавать дорого и вовремя!</p>
-					</div>
+			<div class="b-footer_row">
+				<div class="b-footer_column">
+					<img src="images/logo-footer.png"/>
 				</div>
-				<div class="b-experience_item">
-					<div class="b-experience_icon">
-						<img src="images/icons/search.svg"/>
-					</div>
-					<div class="b-experience_item-content">
-						<p class="b-experience_title">Экспертиза</p>
-						<div class="b-experience_line"></div>
-						<p class="b-experience_text">Каждый брокер агентства является экспертом по элитной недвижимости в определенном районе Москвы и обладает исчерпывающей информацией о спросе и предложении на недвижимость в своем сегменте.</p>
-					</div>
+				<div class="b-footer_column">
+					<ul>
+						<li>Москва,ул.Арбат,д.13/36</li>
+						<li><strong>Телефон:</strong>+7 (495) 151-94-58</li>
+						<li><strong>E-mail:</strong><a href="mailto:sales@kre.ru" class="b-email m-email_footer" onclick="ga('send', 'event', 'click email', 'click button'); yaCounter19895512.reachGoal('click email');" title="Email">sales@kre.ru</a></li>
+						<li><a class="m-email_footer print-ver" href="javaScript:window.print();">Версия для печати</a></li>
+					</ul>
 				</div>
-				<div class="b-experience_item">
-					<div class="b-experience_icon">
-						<img src="images/icons/heart.svg"/>
-					</div>
-					<div class="b-experience_item-content">
-						<p class="b-experience_title">Честность</p>
-						<div class="b-experience_line"></div>
-						<p class="b-experience_text">Предоставляем собственнику достоверную экспертную оценку его объекта и обеспечиваем полной и точной аналитикой по рынку элитной недвижимости.</p>
-					</div>
+				<div class="b-footer_column">
+					<button class="b-button-callback m-button-callback_footer m-button-callback_footer-contact" ng-click="showCallbackPopup()">обратный звонок</button>
 				</div>
-				<div class="b-experience_item">
-					<div class="b-experience_icon">
-						<img src="images/icons/key.svg"/>
-					</div>
-					<div class="b-experience_item-content">
-						<p class="b-experience_title">Подход</p>
-						<div class="b-experience_line"></div>
-						<p class="b-experience_text">Мы отличаемся персональным подходом к каждому владельцу недвижимости и готовы добиваться для него лучших условий сделки.</p>
-					</div>
+				<div class="b-footer_column">
+					<a href="https://www.facebook.com/ContactRealEstate/" class="b-soc__item m-soc__item_fb" target="_blank" title=""></a>
+					<a href="https://vk.com/public74262160" class="b-soc__item m-soc__item_vk" target="_blank" title=""></a>
+					<a href="https://twitter.com/Contact_RE?cn=ZmlmdGVlbl9kYXlfcmVz" class="b-soc__item m-soc__item_tw" target="_blank" title=""></a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 </body>
 </html>
