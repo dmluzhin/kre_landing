@@ -1,0 +1,84 @@
+.b-experience {
+  padding: 45px 0;
+  background: $pale-blue;
+  min-width: 1200px;
+
+  .b-title {
+    color: $text-black;
+  }
+  &_inner {
+    display: flex;
+    list-style: none;
+    flex: {
+      direction: row;
+      wrap: wrap;
+    }
+    justify-content: space-between;
+    width: 900px;
+    margin: 30px auto 0;
+  }
+  &_item {
+    display: flex;
+    width: 445px;
+    min-height: 10vh;
+    margin-top: 10px;
+    &:nth-child(3) {
+      margin-top: 40px;
+    }
+    &:last-child {
+      margin-top: 40px;
+    }
+  }
+  &_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 125px;
+    height: 83px;
+    padding: 0 21px;
+    background-image: url("../../images/experience-icon-bg.png");
+    background-size: 83px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &_item-content {
+    margin-left: 21px;
+  }
+  &_title {
+    text-transform: uppercase;
+    font: 22px 'LatoBold', sans-serif;
+    color: $text-black;
+  }
+  &_line {
+    width: 90px;
+    height: 3px;
+    background: RGBA(32, 40, 48, .1);
+    margin-top: 25px;
+  }
+  &_text {
+    font-size: 14px;
+    line-height: 26px;
+    color: $text-black;
+    margin-top: 25px;
+  }
+}
+.b-elucidation {
+  text-align: center;
+  color: #fff;
+  opacity: .5;
+  margin-top: 20px;
+  font: 17px 'LatoLight', Verdana, sans-serif;
+  &_contact {
+    color: $text-black;
+    opacity: .7;
+    font: 100 17px/28px 'LatoLight', Verdana, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

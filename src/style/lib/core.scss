@@ -2,3 +2,14 @@ body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
 }
+.l-inner {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.b-title {
+  font: 34px/40px 'LatoBold', Verdana, sans-serif;
+  text-align: center;
+  color: #fff;
+}
