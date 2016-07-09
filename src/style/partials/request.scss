@@ -1,0 +1,51 @@
+.b-form {
+  padding: 40px 0;
+  background: $red;
+  min-width: 1200px;
+  &_inner {
+    width: 900px;
+    margin: 0 auto;
+  }
+  &_fields {
+    margin-top: 40px;
+    text-align: center;
+  }
+  &_input {
+    font: 16px 'LatoBold', Verdana, sans-serif;
+    width: 260px;
+    display: inline-block;
+    vertical-align: middle;
+    background: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 2px solid RGBA(255, 255, 255, .1);
+    margin-top: 0;
+    margin-right: 50px;
+    padding: 15px 0;
+    border-bottom: 2px solid #e7e7e8;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    outline: none;
+  }
+  .m-button-send-form_contact {
+    display: inline-block;
+    font: 16px 'LatoBold', Verdana, sans-serif;
+    vertical-align: middle;
+    background: #fff;
+    color: #2e557c;
+    margin-top: 0;
+    height: 52px;
+    text-transform: uppercase;
+    padding: 0 30px;
+    border: none;
+    width: 260px;
+  }
+}
+.b-title {
+  font: 34px/40px 'LatoBold', Verdana, sans-serif;
+  text-align: center;
+  color: #fff;
+
+}

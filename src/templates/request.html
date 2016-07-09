@@ -1,0 +1,10 @@
+<div class="b-form">
+	<div class="b-form_inner" ng-submit="sendOrderForm()">
+		<h2 class="b-title m-title_white">Оставить заявку</h2>
+		<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
+			<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+			<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+			<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+		</form>
+	</div>
+</div>
