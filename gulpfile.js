@@ -32,7 +32,7 @@ var path = {
 	src: {
 		html: 'src/*.html', //Говорит, что будет брать файлы с расширением .html
 		js: 'src/js/main.js', //В стилях и скриптах нам понадобятся только main файлы
-		style: 'src/style/main.scss',
+		style: ['src/style/main.scss','src/style/font.css'],
 		images: 'src/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
 		fonts: 'src/fonts/**/*.*' //То же самое для шрифтов
 	},

@@ -2,8 +2,10 @@
   position: relative;
   min-width: 1200px;
   width: 100%;
-  height: 478px;
-  background-color: $bg-black;
+  height: 540px;
+  background: url('../../images/big.jpg') no-repeat;
+  background-size: cover;
+  background-position: bottom center;
 }
 .l-inner {
   width: 1200px;
@@ -12,9 +14,93 @@
   overflow: hidden;
 }
 .b-logo {
-  background: #9d1c20;
+  background: $red;
   padding: 20px 50px 20px 50px;
   position: absolute;
   left: 0;
   top: 40px;
+}
+.b-contacts {
+  position: absolute;
+  right: 55px;
+  top: 40px;
+  width: 200px;
+}
+.b-phone {
+  font: 22px 'LatoBold', Verdana, sans-serif;
+  color: #fff;
+  margin-top: 12px;
+  display: inline-block;
+}
+.b-email {
+  font-size: 14px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 5px;
+}
+.b-phone-mobile {
+  display: none;
+}
+.b-main-title {
+  font: 55px/65px 'LatoBold', Verdana, sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: 174px;
+  text-shadow: 3px -1px 10px rgba(60, 60, 60, 1);
+}
+.b-buttons-wrap {
+  display: table;
+  margin: 0 auto;
+}
+.b-button-sell {
+  display: inline-block;
+  min-width: 213px;
+  background: $red;
+  text-transform: uppercase;
+  color: #fff;
+  font: 16px 'LatoBold', Verdana, sans-serif;
+  height: 58px;
+  padding: 0 30px;
+  margin: 40px 15px;
+  border: none;
+}
+.b-button-sign {
+  display: inline-block;
+  min-width: 213px;
+  background: $gold;
+  text-transform: uppercase;
+  color: $button-text;
+  font: 16px 'LatoBold', Verdana, sans-serif;
+  height: 58px;
+  padding: 0 30px;
+  margin: 40px 15px;
+  border: none;
+}
+.bottom-nav {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  left: 0; bottom: 0;
+  background-color: $bg-black-80;
+
+  &-list {
+    display: table;
+    margin: 0 auto;
+    list-style-type: none;
+    height: 100%;
+  }
+  &-item {
+    display: table-cell;
+    padding: 0 22px;
+    vertical-align: middle;
+  }
+  .element {
+    font: 14px 'LatoBold', Verdana, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .property-counter {
+    font: 14px 'LatoRegular', Verdana, sans-serif;
+    color: $light-gray;
+  }
 }

@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'LatoLight';
+  src: url('../fonts/LatoLight/LatoLight.eot');
+  src: url('../fonts/LatoLight/LatoLight.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/LatoLight/LatoLight.woff') format('woff'),
+  url('../fonts/LatoLight/LatoLight.ttf') format('truetype');
+url('../fonts/LatoLight/LatoLight.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'LatoRegular';
+  src: url('../fonts/LatoRegular/LatoRegular.eot');
+  src: url('../fonts/LatoRegular/LatoRegular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/LatoRegular/LatoRegular.woff') format('woff'),
+  url('../fonts/LatoRegular/LatoRegular.ttf') format('truetype');
+url('../fonts/LatoRegular/LatoRegular.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'LatoBold';
+  src: url('../fonts/LatoBold/LatoBold.eot');
+  src: url('../fonts/LatoBold/LatoBold.eot?#iefix')format('embedded-opentype'),
+  url('../fonts/LatoBold/LatoBold.woff') format('woff'),
+  url('../fonts/LatoBold/LatoBold.ttf') format('truetype');
+url('../fonts/LatoBold/LatoBold.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'LatoBlack';
+  src:url('../fonts/LatoBlack/LatoBlack.eot?');
+  src:url('../fonts/LatoBlack/LatoBlack.eot?#iefix-5zqyhv') format('embedded-opentype'),
+  url('../fonts/LatoBlack/LatoBlack.woff') format('woff'),
+  url('../fonts/LatoBlack/LatoBlack.ttf') format('truetype'),
+  url('../fonts/LatoBlack/LatoBlack.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
