@@ -1,3 +1,4 @@
+@import "varibles";
 body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
@@ -24,4 +25,16 @@ body {
   &:hover {
     background-color: #c0ccd7;
   }
+}
+.b-button-sign {
+  display: inline-block;
+  min-width: 213px;
+  background: $gold;
+  text-transform: uppercase;
+  color: $button-text;
+  font: 16px 'LatoBold', Verdana, sans-serif;
+  height: 58px;
+  padding: 0 30px;
+  margin: 40px 15px;
+  border: none;
 }

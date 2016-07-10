@@ -1,0 +1,31 @@
+.b-subscription {
+  padding: 40px 0;
+  background: $button-text;
+  min-width: 1200px;
+  &_inner {
+    width: 900px;
+    margin: 0 auto;
+  }
+  &_fields {
+    margin-top: 40px;
+    text-align: center;
+  }
+  &_input {
+    font: 16px 'LatoBold', Verdana, sans-serif;
+    width: 260px;
+    display: inline-block;
+    vertical-align: middle;
+    background: none;
+    color: $gold;
+    text-transform: uppercase;
+    border-bottom: 2px solid $gold;
+    margin-top: 0;
+    margin-right: 50px;
+    padding: 15px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    outline: none;
+  }
+}
