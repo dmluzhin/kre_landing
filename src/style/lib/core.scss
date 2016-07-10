@@ -13,3 +13,15 @@ body {
   text-align: center;
   color: #fff;
 }
+.b-button-callback {
+  text-transform: uppercase;
+  color: #2e557c;
+  height: 32px;
+  border: 2px solid #c0ccd7;
+  background: none;
+  padding: 2px 20px 0;
+  font: 12px 'LatoBold', Verdana, sans-serif;
+  &:hover {
+    background-color: #c0ccd7;
+  }
+}
