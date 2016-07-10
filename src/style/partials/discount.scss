@@ -1,0 +1,20 @@
+.b-discount {
+  padding: 45px 0;
+  background: #fff;
+  min-width: 1200px;
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 1020px;
+    margin: 0 auto;
+    min-height: 20vh;
+  }
+  &_item {
+    width: 480px;
+    height: 320px;
+    margin: 15px;
+    background: $pale-blue;
+  }
+}
