@@ -1,4 +1,17 @@
 @import "varibles";
+/*@viewport {
+  width: device-width;
+}
+head {
+  @viewport {
+    width: device-width;
+  }
+  @media screen and (max-width: 1024px) {
+    @viewport {
+      width: 1024px;
+    }
+  }
+}*/
 body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
@@ -41,4 +54,8 @@ body {
   padding: 0 30px;
   margin: 40px 15px;
   border: none;
+  @media screen and (max-width: 1023px) {
+    display: block;
+    margin: 8px auto;
+  }
 }

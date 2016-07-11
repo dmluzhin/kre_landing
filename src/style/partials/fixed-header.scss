@@ -6,14 +6,23 @@
   top: 0;
   left: 0;
   z-index: 1;
+  @media screen and (max-width: 640px){
+    display: none;
+  }
   .l-inner {
     height: 100%;
   }
   .fixed-logo {
     top: 0;
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
   }
   .b-contacts {
     top: 4px;
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
   }
   .b-buttons-wrap {
     height: 100%;
