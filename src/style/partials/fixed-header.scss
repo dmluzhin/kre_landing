@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   z-index: 1;
-  margin-top: -73px;
   .l-inner {
     height: 100%;
   }
@@ -27,4 +26,12 @@
     height: 49px;
     min-width: 200px;
   }
+}
+.hidden {
+  margin-top: -73px;
+  transition: all ease .15s;
+}
+.sticky {
+  margin-top: 0;
+  transition: all ease .15s;
 }
