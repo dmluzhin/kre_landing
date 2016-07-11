@@ -6,6 +6,9 @@
   background: url('../../images/big.jpg') no-repeat;
   background-size: cover;
   background-position: bottom center;
+  @media screen and (max-width: 1200px) {
+    min-width: 100%;
+  }
 }
 .b-logo {
   background: $red;

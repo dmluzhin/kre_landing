@@ -2,9 +2,15 @@
   padding: 40px 0;
   background: $button-text;
   min-width: 1200px;
+  @media screen and (max-width: 1200px) {
+    min-width: 100%;
+  }
   &_inner {
     width: 900px;
     margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
   }
   &_fields {
     margin-top: 40px;
@@ -20,12 +26,15 @@
     text-transform: uppercase;
     border-bottom: 2px solid $gold;
     margin-top: 0;
-    margin-right: 50px;
+    margin-right: 15px;
     padding: 15px 0;
     border-top: none;
     border-left: none;
     border-right: none;
     text-align: center;
     outline: none;
+  }
+  .b-button-sign {
+    margin: 0 15px;
   }
 }

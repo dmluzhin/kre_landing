@@ -2,6 +2,9 @@
   padding: 45px 0;
   background: #fff;
   min-width: 1200px;
+  @media screen and (max-width: 1200px) {
+    min-width: 100%;
+  }
   &_inner {
     display: flex;
     flex-direction: row;

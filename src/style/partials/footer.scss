@@ -3,11 +3,18 @@
   border-top: 1px solid #cbd1d7;
   padding: 40px 0 30px;
   min-width: 1200px;
+  @media screen and (max-width: 1200px) {
+    min-width: 100%;
+  }
   .l-inner {
     display: table;
     width: 900px;
     min-height: 10vh;
     margin: 0 auto;
+    padding: 0 15px;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
   }
   &_row {
     display: table-row;
