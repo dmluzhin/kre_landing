@@ -34,6 +34,10 @@
     border-right: none;
     text-align: center;
     outline: none;
+    @media screen and (max-width: 1023px) {
+      display: block;
+      margin: 44px auto;
+    }
   }
   .m-button-send-form_contact {
     display: inline-block;
@@ -47,5 +51,10 @@
     padding: 0 30px;
     border: none;
     width: 260px;
+    @media screen and (max-width: 1023px) {
+      display: block;
+      margin: 0 auto;
+      /*margin-top: 44px;*/
+    }
   }
 }

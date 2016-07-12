@@ -20,23 +20,12 @@
   left: 0;
   top: 40px;
   max-width: 240px;
-  @media screen and (max-width: 640px) {
-    top: 0;
-    right: 0;
-    margin: 0 auto;
-  }
 }
 .b-contacts {
   position: absolute;
   right: 55px;
   top: 40px;
   width: 200px;
-  @media screen and (max-width: 640px) {
-    top: 75px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-  }
 }
 .b-phone {
   font: 22px 'LatoBold', Verdana, sans-serif;
@@ -66,8 +55,9 @@
   margin-top: 174px;
   text-shadow: 3px -1px 10px rgba(60, 60, 60, 1);
   @media screen and (max-width: 1023px) {
-    font: 40px/50px 'LatoBold', Verdana, sans-serif;
+    margin-top: 135px;
     margin-bottom: 15px;
+    padding: 0 15px;
   }
 }
 .b-buttons-wrap {
@@ -86,8 +76,7 @@
   margin: 40px 15px;
   border: none;
   @media screen and (max-width: 1023px) {
-    display: block;
-    margin: 8px auto;
+    margin: 15px;
   }
 }
 
@@ -97,9 +86,6 @@
   height: 60px;
   left: 0; bottom: 0;
   background-color: $bg-black-80;
-  @media screen and (max-width: 640px){
-    display: none;
-  }
 
   &-list {
     display: table;
