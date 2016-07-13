@@ -67,7 +67,6 @@
     margin-top: 30px;
     font: 16px 'LatoBold', Verdana, sans-serif;
     text-align: center;
-    text-transform: uppercase;
     outline: none;
     &:first-child {
       margin-top: 0;
@@ -83,4 +82,31 @@
     right: 15px;
     margin: 10px;
   }
+}
+.b-popup_input::-webkit-input-placeholder  {
+  text-transform: uppercase;
+  color: #999;
+}
+.b-popup_input::-moz-placeholder {
+  text-transform: uppercase;
+  color: #999;
+}
+.b-popup_input:-moz-placeholder {
+  text-transform: uppercase;
+  color: #999;
+}
+.b-popup_input:-ms-input-placeholder {
+  text-transform: uppercase;
+  color: #999;
+}
+.b-popup_input.ng-dirty.ng-invalid:not(.ng-empty),
+.b-form_input.ng-dirty.ng-invalid:not(.ng-empty) {
+  border-bottom: 2px solid red;
+}
+.b-popup_input.ng-valid.ng-dirty:not(.ng-empty),
+.b-form_input.ng-valid.ng-dirty:not(.ng-empty) {
+  border-bottom: 2px solid green;
+}
+.ng-submitted .ng-invalid-required.ng-empty {
+  border-bottom: 2px solid red;
 }

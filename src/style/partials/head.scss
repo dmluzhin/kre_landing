@@ -68,6 +68,9 @@
   padding: 0 30px;
   margin: 40px 15px;
   border: none;
+  &:hover {
+    background-color: #ad2125;
+  }
   @media screen and (max-width: 1023px) {
     margin: 15px;
   }
