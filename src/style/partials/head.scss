@@ -9,9 +9,6 @@
   @media screen and (max-width: 1200px) {
     min-width: 100%;
   }
-  /*@media screen and (max-width: 1200px) {
-    height: auto;
-  }*/
 }
 .b-logo {
   background: $red;
@@ -40,10 +37,6 @@
   display: inline-block;
   margin-top: 5px;
   text-shadow: 3px -1px 10px rgba(60, 60, 60, 1);
-  @media screen and (max-width: 640px) {
-    display: block;
-    text-align: center;
-  }
 }
 .b-phone-mobile {
   display: none;

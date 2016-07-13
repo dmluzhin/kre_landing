@@ -1,17 +1,4 @@
 @import "varibles";
-/*@viewport {
-  width: device-width;
-}
-head {
-  @viewport {
-    width: device-width;
-  }
-  @media screen and (max-width: 1024px) {
-    @viewport {
-      width: 1024px;
-    }
-  }
-}*/
 body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
@@ -39,8 +26,12 @@ body {
   background: none;
   padding: 2px 20px 0;
   font: 12px 'LatoBold', Verdana, sans-serif;
+  clear: both;
   &:hover {
     background-color: #c0ccd7;
+  }
+  @media screen and (max-width: 1023px) {
+    margin-top: 12px;
   }
 }
 .b-button-sign {

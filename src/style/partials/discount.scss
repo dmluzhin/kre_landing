@@ -106,7 +106,10 @@
     font: 14px 'LatoRegular', Verdana, sans-serif;
     text-align: left;
     color: $light-gray;
-    padding-bottom: 4px;
+    margin-bottom: 4px;
+    height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &-price {
     @extend .b-apartment-head;
