@@ -18,8 +18,8 @@
 				<img src="images/contact-logo.png" alt="Contact Logo"/>
 			</div>
 			<div class="b-buttons-wrap">
-				<button class="b-button-sign">подписаться</button>
-				<button class="b-button-sell m-button-sell_contact" ng-click="showCallbackPopup()">оставить заявку</button>
+				<button class="m-button-sell_contact b-button-sign" ng-click="showSignPopup()">подписаться</button>
+				<button class="b-button-sell" ng-click="showCallbackPopup()">оставить заявку</button>
 			</div>
 			<div class="b-contacts">
 				<p class="b-phone m-phone_contact phone-desktop" title="Телефон" onclick="">+7 (495) 104-51-02</p>
@@ -42,7 +42,7 @@
 			</div>
 			<h1 class="b-main-title m-main-title_contact">Элитная недвижимость<br>со скидкой</h1>
 			<div class="b-buttons-wrap">
-				<button class="b-button-sign">подписаться</button>
+				<button class="b-button-sign" ng-click="showSignPopup()">подписаться</button>
 				<button class="b-button-sell m-button-sell_contact" ng-click="showCallbackPopup()">оставить заявку</button>
 			</div>
 		</div>
@@ -397,9 +397,27 @@
 		</div>
 	</div>
 	<div class="g-hide">
-		<div class="b-popup j-popup-gratitude" ng-submit="sendCallbackForm()">
+		<div class="b-popup j-popup-sign" ng-submit="sendSignForm()">
+			<div ng-hide="isSignFormSended">
+				<p class="b-title">Подписаться</p>
+				<form class="b-popup_form" name="callbackForm" novalidate>
+					<input type="text" class="b-popup_input" ng-model="callbackFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
+					<input type="tel" class="b-popup_input j-phone-masked" ng-model="callbackFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Ваш e-mail?" required />
+					<input type="text" class="b-popup_input j-input-time" ng-model="callbackFormData.time" ng-maxlength="50" placeholder="В какое время перезвонить?" />
+					<button class="b-button-send-form callback_send-form" type="submit">Отправить</button>
+				</form>
+			</div>
+			<div ng-show="isSignFormSended">
+				<p class="b-title">Спасибо.</p>
+				<p class="b-popup_subtext">Наш менеджер перезвонит вам в указанное время.</p>
+			</div>
+			<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
+	<div class="g-hide">
+		<div class="b-popup j-popup-gratitude" ng-submit="sendSignForm()">
 			<p class="b-title">Спасибо.</p>
-			<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+			<p class="b-popup__subtext">Вы успешно подписаны</p>
 			<div class="b-popup__close j-popup-close"></div>
 		</div>
 	</div>

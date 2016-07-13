@@ -79,6 +79,34 @@
             }
         };
 
+        $scope.showSignPopup = function() {
+            if ($scope.isSignFormSended) $scope.isSignFormSended = false;
+            $('.j-popup-sign').arcticmodal();
+        };
+
+        $scope.sendSignForm = function() {
+            if ($scope.signForm.$valid) {
+                $scope.signFormData['subject'] = 'Заказать обратный звонок ЖК Андреевский';
+                $http({
+                    method: 'POST',
+                    url: '/sendmail.php',
+                    data: $httpParamSerializerJQLike($scope.callbackFormData),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(function(data) {
+                    $scope.callbackForm.$setPristine();
+                    for (var prop in $scope.callbackFormData) {
+                        $scope.callbackFormData[prop] = '';
+                    }
+                    $scope.isCallbackFormSended = true;
+                    setTimeout(function() {
+                        $('.j-popup-sign').arcticmodal('close');
+                    }, 3000);
+                    ga('send', 'event', 'callback', 'click button');
+                    yaCounter19895512.reachGoal('callback');
+                });
+            }
+        };
+
         $scope.showBarkliBrokerPopup = function() {
             if ($scope.isBarkliBrokerFormSended) $scope.isBarkliBrokerFormSended = false;
             $('.j-popup-barkli-broker').arcticmodal();
