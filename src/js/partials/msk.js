@@ -1,0 +1,1 @@
+var currentRegion = 'msk';

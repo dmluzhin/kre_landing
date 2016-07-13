@@ -11,8 +11,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/fonts.css">
 </head>
-<body>
-<script type="text/javascript" src="js/main.js"></script>
+<body ng-app="main" ng-controller="mainController">
 	<div class="fixed-header hidden">
 		<div class="l-inner">
 			<div class="b-logo fixed-logo">
@@ -377,8 +376,28 @@
 		</div>
 	</footer>
 
-<!--SCRIPTS-->
 
+	<div class="g-hide">
+		<div class="b-popup j-popup-callback" ng-submit="sendCallbackForm()">
+			<div ng-hide="isCallbackFormSended">
+				<p class="b-title">Перезвоним</p>
+				<p class="b-popup_subtext">в удобное для вас время</p>
+				<form class="b-popup_form" name="callbackForm" novalidate>
+					<input type="text" class="b-popup_input" ng-model="callbackFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
+					<input type="tel" class="b-popup_input j-phone-masked" ng-model="callbackFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Ваш телефон?" required />
+					<input type="text" class="b-popup_input j-input-time" ng-model="callbackFormData.time" ng-maxlength="50" placeholder="В какое время перезвонить?" />
+					<button class="b-button-send-form callback_send-form" type="submit">Отправить</button>
+				</form>
+			</div>
+			<div ng-show="isCallbackFormSended">
+				<p class="b-title">Спасибо.</p>
+				<p class="b-popup_subtext">Наш менеджер перезвонит вам в указанное время.</p>
+			</div>
+			<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
+<!--SCRIPTS-->
+	<script type="text/javascript" src="js/main.js"></script>
 <!--SCRIPTS-->
 </body>
 </html>
