@@ -48,9 +48,9 @@
 		</div>
 		<div class="bottom-nav">
 			<ul class="bottom-nav-list">
-				<li class="bottom-nav-item"><a href="#" class="element">Городская</a></li>
-				<li class="bottom-nav-item"><a href="#" class="element">Загородная</a></li>
-				<li class="bottom-nav-item"><a href="#" class="element">Коммерческая</a></li>
+				<li class="bottom-nav-item"><span ng-click="showFlatPopup($index)" href="#" class="element">Городская</span></li>
+				<li class="bottom-nav-item"><span ng-click="showCountryPopup($index)" href="#" class="element">Загородная</span></li>
+				<li class="bottom-nav-item"><span ng-click="showCommercPopup($index)" href="#" class="element">Коммерческая</span></li>
 			</ul>
 		</div>
 	</div>
@@ -421,6 +421,7 @@
 			<div class="b-popup__close j-popup-close"></div>
 		</div>
 	</div>
+	
 <!--SCRIPTS-->
 	<script type="text/javascript" src="js/main.js"></script>
 <!--SCRIPTS-->

@@ -98,6 +98,8 @@
     font: 14px 'LatoBold', Verdana, sans-serif;
     color: #fff;
     text-transform: uppercase;
+    cursor: pointer;
+    &:hover {text-decoration: underline;}
   }
   .property-counter {
     font: 14px 'LatoRegular', Verdana, sans-serif;

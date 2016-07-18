@@ -83,6 +83,24 @@
     margin: 10px;
   }
 }
+.b-flat-schema {
+  padding: 30px 20px 0;
+  &__info {
+    width: 300px;
+    list-style: none;
+  }
+  &__el {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+}
+
 .b-popup_input::-webkit-input-placeholder  {
   text-transform: uppercase;
   color: #999;
