@@ -1,0 +1,17 @@
+<a ng-repeat="commerc in commerc" href="#" target="_blank" class="b-discount_item">
+	<div class="item-image-holder">
+		<img ng-src="{{commerc.img}}">
+	</div>
+	<span class="b-discount_flag">-{{commerc.discount}}%</span>
+	<div class="b-discount_item-description">
+		<div class="b-apartment">
+			<div class="b-apartment-head">{{commerc.address}}</div>
+			<p class="b-apartment-desc">{{commerc.district}}, м. {{commerc.metro}}, {{commerc.distance}}</p>
+			<span class="b-apartment-price">{{commerc.area}} м<sup>2</sup></span>
+		</div>
+		<div class="b-salary">
+			<span class="b-salary-discount">{{commerc.new_price}} ₽</span>
+			<span class="b-salary-initial">{{commerc.old_price}} ₽</span>
+		</div>
+	</div>
+</a>

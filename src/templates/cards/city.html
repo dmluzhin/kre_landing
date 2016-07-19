@@ -1,0 +1,17 @@
+<a ng-repeat="param in params" href="#" target="_blank" class="b-discount_item">
+	<div class="item-image-holder">
+		<img ng-src="{{param.img}}">
+	</div>
+	<span class="b-discount_flag">-{{param.discount}}%</span>
+	<div class="b-discount_item-description">
+		<div class="b-apartment">
+			<div class="b-apartment-head">{{param.estate}}</div>
+			<p class="b-apartment-desc">{{param.rooms}} - комнатная квартира, {{param.decoration}}, {{param.floor}}-й этаж</p>
+			<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+		</div>
+		<div class="b-salary">
+			<span class="b-salary-discount">{{param.new_price}} ₽</span>
+			<span class="b-salary-initial">{{param.old_price}} ₽</span>
+		</div>
+	</div>
+</a>

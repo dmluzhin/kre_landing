@@ -48,147 +48,47 @@
 		</div>
 		<div class="bottom-nav">
 			<ul class="bottom-nav-list">
-				<li class="bottom-nav-item"><span ng-click="showFlatPopup($index)" href="#" class="element">Городская</span></li>
-				<li class="bottom-nav-item"><span ng-click="showCountryPopup($index)" href="#" class="element">Загородная</span></li>
-				<li class="bottom-nav-item"><span ng-click="showCommercPopup($index)" href="#" class="element">Коммерческая</span></li>
+				<li class="bottom-nav-item"><span class="element">все</span></li>
+				<li class="bottom-nav-item"><span class="element">Городская</span></li>
+				<li class="bottom-nav-item"><span class="element">Загородная</span></li>
+				<li class="bottom-nav-item"><span class="element">Коммерческая</span></li>
 			</ul>
 		</div>
 	</div>
 	<div class="b-discount">
 		<div class="b-discount_inner">
-			<a href="#" target="_blank" class="b-discount_item">
+			<a ng-repeat="country in country" href="#" target="_blank" class="b-discount_item">
 				<div class="item-image-holder">
-					<img src="images/apartments/italkvartal.jpg">
+					<img ng-src="{{country.img}}">
 				</div>
-				<span class="b-discount_flag">-20%</span>
+				<span class="b-discount_flag">-{{country.discount}}%</span>
 				<div class="b-discount_item-description">
 					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Итальянский квартал&raquo;</div>
-						<p class="b-apartment-desc">Квартира с террасой в центре Москвы</p>
-						<span class="b-apartment-price">122,6 м<sup>2</sup></span>
+						<div class="b-apartment-head">{{country.estate}}</div>
+						<p class="b-apartment-desc">{{country.direction}}, {{country.distance}} км. от МКАД</p>
+						<!--<p class="b-apartment-desc">{{country.type}}</p>-->
+						<span class="b-apartment-price">{{country.land_area}} сот., {{country.house_area}} м<sup>2</sup></span>
 					</div>
 					<div class="b-salary">
-						<span class="b-salary-discount">66 000 000 ₽</span>
-						<span class="b-salary-initial">79 000 000 ₽</span>
+						<span class="b-salary-discount">{{country.new_price}} ₽</span>
+						<span class="b-salary-initial">{{country.old_price}} ₽</span>
 					</div>
 				</div>
 			</a>
-			<a href="#" target="_blank" class="b-discount_item">
+			<a ng-repeat="param in params" href="#" target="_blank" class="b-discount_item">
 				<div class="item-image-holder">
-					<img src="images/apartments/legenda-cvetnogo.jpg">
+					<img ng-src="{{param.img}}">
 				</div>
-				<span class="b-discount_flag">-20%</span>
+				<span class="b-discount_flag">-{{param.discount}}%</span>
 				<div class="b-discount_item-description">
 					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Легенда Цветного&raquo;</div>
-						<p class="b-apartment-desc">Квартира без отделки</p>
-						<span class="b-apartment-price">216 м<sup>2</sup></span>
+						<div class="b-apartment-head">{{param.estate}}</div>
+						<p class="b-apartment-desc">{{param.rooms}} - комнатная квартира, {{param.decoration}}, {{param.floor}}-й этаж</p>
+						<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
 					</div>
 					<div class="b-salary">
-						<span class="b-salary-discount">140 000 000 ₽</span>
-						<span class="b-salary-initial">165 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/loterator.jpg">
-				</div>
-				<span class="b-discount_flag">-20%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Литератор&raquo;</div>
-						<p class="b-apartment-desc">Четырехкомнатная квартира без отделки</p>
-						<span class="b-apartment-price">154 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">105 000 000 ₽</span>
-						<span class="b-salary-initial">125 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/ostogenka-parkapalace.jpg">
-				</div>
-				<span class="b-discount_flag">-20%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Остоженка Парк Палас&raquo;</div>
-						<p class="b-apartment-desc">Восьмикомнатная квартира с отделкой</p>
-						<span class="b-apartment-price">500 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">938 000 000 ₽</span>
-						<span class="b-salary-initial">1 120 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/barkli.jpg">
-				</div>
-				<span class="b-discount_flag">-15%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК Barkli Park</div>
-						<p class="b-apartment-desc">Элитный жилой комплекс, вписанный в кошку</p>
-						<span class="b-apartment-price">500 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">190 000 000 ₽</span>
-						<span class="b-salary-initial">218 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/italkvartal.jpg">
-				</div>
-				<span class="b-discount_flag">-15%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Итальянский квартал&raquo;</div>
-						<p class="b-apartment-desc">Квартира с террасой в центре Москвы</p>
-						<span class="b-apartment-price">122,6 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">66 000 000 ₽</span>
-						<span class="b-salary-initial">79 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/legenda-cvetnogo.jpg">
-				</div>
-				<span class="b-discount_flag">-15%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Легенда Цветного&raquo;</div>
-						<p class="b-apartment-desc">Квартира без отделки</p>
-						<span class="b-apartment-price">216 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">140 000 000 ₽</span>
-						<span class="b-salary-initial">165 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/loterator.jpg">
-				</div>
-				<span class="b-discount_flag">-15%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Литератор&raquo;</div>
-						<p class="b-apartment-desc">Четырехкомнатная квартира без отделки</p>
-						<span class="b-apartment-price">154 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">105 000 000 ₽</span>
-						<span class="b-salary-initial">125 000 000 ₽</span>
+						<span class="b-salary-discount">{{param.new_price}} ₽</span>
+						<span class="b-salary-initial">{{param.old_price}} ₽</span>
 					</div>
 				</div>
 			</a>
@@ -206,88 +106,20 @@
 	</div>
 	<div class="b-discount">
 		<div class="b-discount_inner">
-			<a href="#" target="_blank" class="b-discount_item">
+			<a ng-repeat="commerc in commerc" href="#" target="_blank" class="b-discount_item">
 				<div class="item-image-holder">
-					<img src="images/apartments/ostogenka-parkapalace.jpg">
+					<img ng-src="{{commerc.img}}">
 				</div>
-				<span class="b-discount_flag">-10%</span>
+				<span class="b-discount_flag">-{{commerc.discount}}%</span>
 				<div class="b-discount_item-description">
 					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Остоженка Парк Палас&raquo;</div>
-						<p class="b-apartment-desc">Восьмикомнатная квартира с отделкой</p>
-						<span class="b-apartment-price">500 м<sup>2</sup></span>
+						<div class="b-apartment-head">{{commerc.address}}</div>
+						<p class="b-apartment-desc">{{commerc.district}}, м. {{commerc.metro}}, {{commerc.distance}}</p>
+						<span class="b-apartment-price">{{commerc.area}} м<sup>2</sup></span>
 					</div>
 					<div class="b-salary">
-						<span class="b-salary-discount">938 000 000 ₽</span>
-						<span class="b-salary-initial">1 120 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/barkli.jpg">
-				</div>
-				<span class="b-discount_flag">-10%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК Barkli Park</div>
-						<p class="b-apartment-desc">Элитный жилой комплекс, вписанный в кошку</p>
-						<span class="b-apartment-price">500 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">190 000 000 ₽</span>
-						<span class="b-salary-initial">218 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/italkvartal.jpg">
-				</div>
-				<span class="b-discount_flag">-10%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Итальянский квартал&raquo;</div>
-						<p class="b-apartment-desc">Квартира с террасой в центре Москвы</p>
-						<span class="b-apartment-price">122,6 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">66 000 000 ₽</span>
-						<span class="b-salary-initial">79 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/legenda-cvetnogo.jpg">
-				</div>
-				<span class="b-discount_flag">-5%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Легенда Цветного&raquo;</div>
-						<p class="b-apartment-desc">Квартира без отделки</p>
-						<span class="b-apartment-price">216 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">140 000 000 ₽</span>
-						<span class="b-salary-initial">165 000 000 ₽</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img src="images/apartments/loterator.jpg">
-				</div>
-				<span class="b-discount_flag">-5%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">ЖК &laquo;Литератор&raquo;</div>
-						<p class="b-apartment-desc">Четырехкомнатная квартира без отделки</p>
-						<span class="b-apartment-price">154 м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">105 000 000 ₽</span>
-						<span class="b-salary-initial">125 000 000 ₽</span>
+						<span class="b-salary-discount">{{commerc.new_price}} ₽</span>
+						<span class="b-salary-initial">{{commerc.old_price}} ₽</span>
 					</div>
 				</div>
 			</a>
@@ -375,8 +207,6 @@
 			</div>
 		</div>
 	</footer>
-
-
 	<div class="g-hide">
 		<div class="b-popup j-popup-callback" ng-submit="sendCallbackForm()">
 			<div ng-hide="isCallbackFormSended">

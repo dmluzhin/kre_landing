@@ -1,0 +1,18 @@
+<a ng-repeat="country in country" href="#" target="_blank" class="b-discount_item">
+	<div class="item-image-holder">
+		<img ng-src="{{country.img}}">
+	</div>
+	<span class="b-discount_flag">-{{country.discount}}%</span>
+	<div class="b-discount_item-description">
+		<div class="b-apartment">
+			<div class="b-apartment-head">{{country.estate}}</div>
+			<p class="b-apartment-desc">{{country.direction}}, {{country.distance}} км. от МКАД</p>
+			<!--<p class="b-apartment-desc">{{country.type}}</p>-->
+			<span class="b-apartment-price">{{country.land_area}} сот., {{country.house_area}} м<sup>2</sup></span>
+		</div>
+		<div class="b-salary">
+			<span class="b-salary-discount">{{country.new_price}} ₽</span>
+			<span class="b-salary-initial">{{country.old_price}} ₽</span>
+		</div>
+	</div>
+</a>
