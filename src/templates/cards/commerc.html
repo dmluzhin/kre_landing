@@ -1,17 +1,17 @@
-<a ng-repeat="commerc in commerc" href="#" target="_blank" class="b-discount_item">
+<a ng-repeat="param in filter(params, 'commerce')" href="#" target="_blank" class="b-discount_item">
 	<div class="item-image-holder">
-		<img ng-src="{{commerc.img}}">
+		<img ng-src="{{param.img}}">
 	</div>
-	<span class="b-discount_flag">-{{commerc.discount}}%</span>
+	<span class="b-discount_flag">-{{param.discount}}%</span>
 	<div class="b-discount_item-description">
 		<div class="b-apartment">
-			<div class="b-apartment-head">{{commerc.address}}</div>
-			<p class="b-apartment-desc">{{commerc.district}}, м. {{commerc.metro}}, {{commerc.distance}}</p>
-			<span class="b-apartment-price">{{commerc.area}} м<sup>2</sup></span>
+			<div class="b-apartment-head">{{param.head}}</div>
+			<p class="b-apartment-desc">{{param.desc}}</p>
+			<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
 		</div>
 		<div class="b-salary">
-			<span class="b-salary-discount">{{commerc.new_price}} ₽</span>
-			<span class="b-salary-initial">{{commerc.old_price}} ₽</span>
+			<span class="b-salary-discount">{{param.new_price}} ₽</span>
+			<span class="b-salary-initial">{{param.old_price}} ₽</span>
 		</div>
 	</div>
 </a>

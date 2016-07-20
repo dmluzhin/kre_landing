@@ -14,9 +14,9 @@
 <body ng-app="main" ng-controller="mainController">
 	<div class="fixed-header hidden">
 		<div class="l-inner">
-			<div class="b-logo fixed-logo">
+			<a href="/" class="b-logo fixed-logo">
 				<img src="images/contact-logo.png" alt="Contact Logo"/>
-			</div>
+			</a>
 			<div class="b-buttons-wrap">
 				<button class="m-button-sell_contact b-button-sign" ng-click="showSignPopup()">подписаться</button>
 				<button class="b-button-sell" ng-click="showCallbackPopup()">оставить заявку</button>
@@ -31,9 +31,9 @@
 	</div>
 	<div class="b-main-offer">
 		<div class="l-inner">
-			<div class="b-logo">
+			<a href="/" class="b-logo">
 				<img src="images/contact-logo.png" alt="Contact Logo"/>
-			</div>
+			</a>
 			<div class="b-contacts">
 				<p class="b-phone m-phone_contact phone-desktop" title="Телефон" onclick="">+7 (495) 104-51-02</p>
 				<a href="tel:+74959567799" class="b-phone m-phone_contact b-phone-mobile" title="Телефон" onclick="ga('send', 'event', 'click number', 'click button'); yaCounter19895512.reachGoal('click number');">+7
@@ -48,81 +48,114 @@
 		</div>
 		<div class="bottom-nav">
 			<ul class="bottom-nav-list">
-				<li class="bottom-nav-item"><span class="element">все</span></li>
-				<li class="bottom-nav-item"><span class="element">Городская</span></li>
-				<li class="bottom-nav-item"><span class="element">Загородная</span></li>
-				<li class="bottom-nav-item"><span class="element">Коммерческая</span></li>
+				<li class="bottom-nav-item undisplayable"><span ng-click="currentTab = 1" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 2" ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 3" ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 4" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</span></li>
 			</ul>
 		</div>
 	</div>
-	<div class="b-discount">
-		<div class="b-discount_inner">
-			<a ng-repeat="country in country" href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img ng-src="{{country.img}}">
-				</div>
-				<span class="b-discount_flag">-{{country.discount}}%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">{{country.estate}}</div>
-						<p class="b-apartment-desc">{{country.direction}}, {{country.distance}} км. от МКАД</p>
-						<!--<p class="b-apartment-desc">{{country.type}}</p>-->
-						<span class="b-apartment-price">{{country.land_area}} сот., {{country.house_area}} м<sup>2</sup></span>
+	<div class="tabs" ng-show="currentTab == 1">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				<a ng-repeat="param in params" href="#" target="_blank" class="b-discount_item">
+					<div class="item-image-holder">
+						<img ng-src="{{param.img}}">
 					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">{{country.new_price}} ₽</span>
-						<span class="b-salary-initial">{{country.old_price}} ₽</span>
+					<span class="b-discount_flag">-{{param.discount}}%</span>
+					<div class="b-discount_item-description">
+						<div class="b-apartment">
+							<div class="b-apartment-head">{{param.head}}</div>
+							<p class="b-apartment-desc">{{param.desc}}</p>
+							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+						</div>
+						<div class="b-salary">
+							<span class="b-salary-discount">{{param.new_price}} ₽</span>
+							<span class="b-salary-initial">{{param.old_price}} ₽</span>
+						</div>
 					</div>
-				</div>
-			</a>
-			<a ng-repeat="param in params" href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img ng-src="{{param.img}}">
-				</div>
-				<span class="b-discount_flag">-{{param.discount}}%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">{{param.estate}}</div>
-						<p class="b-apartment-desc">{{param.rooms}} - комнатная квартира, {{param.decoration}}, {{param.floor}}-й этаж</p>
-						<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
-					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">{{param.new_price}} ₽</span>
-						<span class="b-salary-initial">{{param.old_price}} ₽</span>
-					</div>
-				</div>
-			</a>
+				</a>
+			</div>
+		</div>
+		<div class="b-form">
+			<div class="b-form_inner" ng-submit="sendOrderForm()">
+				<h2 class="b-title m-title_white">Оставить заявку</h2>
+				<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
+					<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+					<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+					<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+				</form>
+			</div>
+		</div>
 		</div>
 	</div>
-	<div class="b-form">
-		<div class="b-form_inner" ng-submit="sendOrderForm()">
-			<h2 class="b-title m-title_white">Оставить заявку</h2>
-			<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
-				<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-				<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
-				<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
-			</form>
+	<div class="tabs" ng-show="currentTab == 2">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				<a ng-repeat="param in filter(params, 'city')" href="#" target="_blank" class="b-discount_item">
+					<div class="item-image-holder">
+						<img ng-src="{{param.img}}">
+					</div>
+					<span class="b-discount_flag">-{{param.discount}}%</span>
+					<div class="b-discount_item-description">
+						<div class="b-apartment">
+							<div class="b-apartment-head">{{param.head}}</div>
+							<p class="b-apartment-desc">{{param.desc}}</p>
+							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+						</div>
+						<div class="b-salary">
+							<span class="b-salary-discount">{{param.new_price}} ₽</span>
+							<span class="b-salary-initial">{{param.old_price}} ₽</span>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
-	<div class="b-discount">
-		<div class="b-discount_inner">
-			<a ng-repeat="commerc in commerc" href="#" target="_blank" class="b-discount_item">
-				<div class="item-image-holder">
-					<img ng-src="{{commerc.img}}">
-				</div>
-				<span class="b-discount_flag">-{{commerc.discount}}%</span>
-				<div class="b-discount_item-description">
-					<div class="b-apartment">
-						<div class="b-apartment-head">{{commerc.address}}</div>
-						<p class="b-apartment-desc">{{commerc.district}}, м. {{commerc.metro}}, {{commerc.distance}}</p>
-						<span class="b-apartment-price">{{commerc.area}} м<sup>2</sup></span>
+	<div class="tabs" ng-show="currentTab == 3">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				<a ng-repeat="param in filter(params, 'country')" href="#" target="_blank" class="b-discount_item">
+					<div class="item-image-holder">
+						<img ng-src="{{param.img}}">
 					</div>
-					<div class="b-salary">
-						<span class="b-salary-discount">{{commerc.new_price}} ₽</span>
-						<span class="b-salary-initial">{{commerc.old_price}} ₽</span>
+					<span class="b-discount_flag">-{{param.discount}}%</span>
+					<div class="b-discount_item-description">
+						<div class="b-apartment">
+							<div class="b-apartment-head">{{param.head}}</div>
+							<p class="b-apartment-desc">{{param.desc}}</p>
+							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+						</div>
+						<div class="b-salary">
+							<span class="b-salary-discount">{{param.new_price}} ₽</span>
+							<span class="b-salary-initial">{{param.old_price}} ₽</span>
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="tabs" ng-show="currentTab == 4">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				<a ng-repeat="param in filter(params, 'commerce')" href="#" target="_blank" class="b-discount_item">
+					<div class="item-image-holder">
+						<img ng-src="{{param.img}}">
+					</div>
+					<span class="b-discount_flag">-{{param.discount}}%</span>
+					<div class="b-discount_item-description">
+						<div class="b-apartment">
+							<div class="b-apartment-head">{{param.head}}</div>
+							<p class="b-apartment-desc">{{param.desc}}</p>
+							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+						</div>
+						<div class="b-salary">
+							<span class="b-salary-discount">{{param.new_price}} ₽</span>
+							<span class="b-salary-initial">{{param.old_price}} ₽</span>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 	<div class="b-subscription">

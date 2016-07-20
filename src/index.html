@@ -14,16 +14,34 @@
 <body ng-app="main" ng-controller="mainController">
 	//= templates/fixed-header.html
 	//= templates/head.html
-	<div class="b-discount">
-		<div class="b-discount_inner">
-			//= templates/cards/contry.html
-			//= templates/cards/city.html
+	<div class="tabs" ng-show="currentTab == 1">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				//= templates/cards/all.html
+			</div>
+		</div>
+		//= templates/request.html
 		</div>
 	</div>
-	//= templates/request.html
-	<div class="b-discount">
-		<div class="b-discount_inner">
-			//= templates/cards/commerc.html
+	<div class="tabs" ng-show="currentTab == 2">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				//= templates/cards/city.html
+			</div>
+		</div>
+	</div>
+	<div class="tabs" ng-show="currentTab == 3">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				//= templates/cards/contry.html
+			</div>
+		</div>
+	</div>
+	<div class="tabs" ng-show="currentTab == 4">
+		<div class="b-discount">
+			<div class="b-discount_inner">
+				//= templates/cards/commerc.html
+			</div>
 		</div>
 	</div>
 	//= templates/subscribe.html

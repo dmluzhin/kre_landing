@@ -121,7 +121,12 @@
                     return w;
                 });
         }
-        $http.get('/city.json').success(function(data) {
+        function sort(obj1, obj2) {
+            return obj2.discount - obj1.discount;
+        }
+        /*$http.get('/city.json').success(function(data) {
+            console.log(data);
+            data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
                 $scope.params.push({
@@ -140,6 +145,7 @@
             }
         });
         $http.get('/country.json').success(function(data) {
+            data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
                 $scope.country.push({
@@ -160,6 +166,7 @@
             }
         });
         $http.get('/commerc.json').success(function(data) {
+            data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
                 $scope.commerc.push({
@@ -176,6 +183,110 @@
                     discount: parseFloat(currentFlat.discount),
                     img: currentFlat.photo
                 });
+            }
+        });*/
+        $http.get('/all.json').success(function(data) {
+            data.sort(sort);
+            for (var i=0;i<data.length; i+=1) {
+                var currentFlat = data[i];
+                if (currentFlat.suptype == 'city') {
+                    $scope.params.push({
+                        city: true,
+                        desc: parseInt(currentFlat['nb_rooms'])+' - ком кв, '+currentFlat.decoration+', '+currentFlat.floor+'-й этаж',
+                        head: currentFlat.estate,
+                        discount: parseFloat(currentFlat.discount),
+                        square: parseFloat(currentFlat.area),
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
+                        img: currentFlat.photo
+                    });
+                }
+                else if (currentFlat.suptype == 'country') {
+                    $scope.params.push({
+                        country: true,
+                        desc: currentFlat.direction+currentFlat.distance+' км. от МКАД',
+                        head: currentFlat.estate,
+                        discount: parseFloat(currentFlat.discount),
+                        square: parseFloat(currentFlat['land_area'])+' сот., '+parseFloat(currentFlat['house_area']),
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
+                        img: currentFlat.photo
+                    });
+                }
+                else if (currentFlat.suptype == 'commerce') {
+                    $scope.params.push({
+                        commerce: true,
+                        desc: currentFlat.district+' м. '+currentFlat.metro+currentFlat.distance,
+                        head: currentFlat.address,
+                        discount: parseFloat(currentFlat.discount),
+                        square: parseFloat(currentFlat.area),
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
+                        img: currentFlat.photo
+                    });
+                }
+                $scope.filter = function(items, attr) {
+                    var result = {};
+                    angular.forEach(items, function(value, key) {
+                        if (value[attr]) {
+                            result[key] = value;
+                        }
+                    });
+                    return result;
+                };
+                /*$scope.params.push({
+                    lot: parseInt(currentFlat.id),
+                    type: currentFlat.type,//commerc type
+                    district: currentFlat.district,//commerc type
+                    metro: currentFlat.metro,//commerc type
+                    distance: currentFlat.distance,//commerc type
+                    direction: currentFlat.direction, //country type
+                    land_area: parseFloat(currentFlat['land_area']),// country type
+                    house_area: parseFloat(currentFlat['house_area']),// country type
+                    estate: currentFlat.estate,
+                    address: currentFlat.address,
+                    rooms: parseInt(currentFlat['nb_rooms']),
+                    floor: parseInt(currentFlat.floor),
+                    decoration: currentFlat.decoration,
+                    old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
+                    new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
+                    discount: parseFloat(currentFlat.discount),
+                    img: currentFlat.photo
+                });*/
+                //}
+                /*else if (currentFlat.suptype == 'commerce') {
+                    $scope.commerc.push({
+                        lot: parseInt(currentFlat.id),
+                        type: currentFlat.type,
+                        address: currentFlat.address,
+                        district: currentFlat.district,
+                        metro: currentFlat.metro,
+                        distance: currentFlat.distance,
+                        area: parseFloat(currentFlat['area']),
+                        decoration: currentFlat.decoration,
+                        old_price: addSpaces(parseInt(currentFlat['old_price'])),
+                        new_price: addSpaces(parseInt(currentFlat['new_price'])),
+                        discount: parseFloat(currentFlat.discount),
+                        img: currentFlat.photo
+                    });
+                }*/
+                /*else if (currentFlat.suptype == 'country') {
+                    $scope.country.push({
+                        lot: parseInt(currentFlat.id),
+                        estate: currentFlat.estate,
+                        address: currentFlat.address,
+                        direction: currentFlat.direction,
+                        distance: parseInt(currentFlat.distance),
+                        type: currentFlat.type,
+                        land_area: parseFloat(currentFlat['land_area']),
+                        house_area: parseFloat(currentFlat['house_area']),
+                        decoration: currentFlat.decoration,
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/10)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/10)),
+                        discount: parseFloat(currentFlat.discount),
+                        img: currentFlat.photo
+                    });
+                }*/
             }
         });
     }]);

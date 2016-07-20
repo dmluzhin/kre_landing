@@ -1,8 +1,8 @@
 <div class="b-main-offer">
 	<div class="l-inner">
-		<div class="b-logo">
+		<a href="/" class="b-logo">
 			<img src="images/contact-logo.png" alt="Contact Logo"/>
-		</div>
+		</a>
 		<div class="b-contacts">
 			<p class="b-phone m-phone_contact phone-desktop" title="Телефон" onclick="">+7 (495) 104-51-02</p>
 			<a href="tel:+74959567799" class="b-phone m-phone_contact b-phone-mobile" title="Телефон" onclick="ga('send', 'event', 'click number', 'click button'); yaCounter19895512.reachGoal('click number');">+7
@@ -17,10 +17,10 @@
 	</div>
 	<div class="bottom-nav">
 		<ul class="bottom-nav-list">
-			<li class="bottom-nav-item"><span class="element">все</span></li>
-			<li class="bottom-nav-item"><span class="element">Городская</span></li>
-			<li class="bottom-nav-item"><span class="element">Загородная</span></li>
-			<li class="bottom-nav-item"><span class="element">Коммерческая</span></li>
+			<li class="bottom-nav-item undisplayable"><span ng-click="currentTab = 1" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</span></li>
+			<li class="bottom-nav-item"><span ng-click="currentTab = 2" ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</span></li>
+			<li class="bottom-nav-item"><span ng-click="currentTab = 3" ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</span></li>
+			<li class="bottom-nav-item"><span ng-click="currentTab = 4" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</span></li>
 		</ul>
 	</div>
 </div>
