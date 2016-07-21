@@ -124,67 +124,6 @@
         function sort(obj1, obj2) {
             return obj2.discount - obj1.discount;
         }
-        /*$http.get('/city.json').success(function(data) {
-            console.log(data);
-            data.sort(sort);
-            for (var i=0;i<data.length; i+=1) {
-                var currentFlat = data[i];
-                $scope.params.push({
-                    lot: parseInt(currentFlat.id),
-                    estate: currentFlat.estate,
-                    address: currentFlat.address,
-                    rooms: parseInt(currentFlat['nb_rooms']),
-                    floor: parseInt(currentFlat.floor),
-                    square: parseFloat(currentFlat.area),
-                    decoration: currentFlat.decoration,
-                    old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
-                    new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
-                    discount: parseFloat(currentFlat.discount),
-                    img: currentFlat.photo
-                });
-            }
-        });
-        $http.get('/country.json').success(function(data) {
-            data.sort(sort);
-            for (var i=0;i<data.length; i+=1) {
-                var currentFlat = data[i];
-                $scope.country.push({
-                    lot: parseInt(currentFlat.id),
-                    estate: currentFlat.estate,
-                    address: currentFlat.address,
-                    direction: currentFlat.direction,
-                    distance: parseInt(currentFlat.distance),
-                    type: currentFlat.type,
-                    land_area: parseFloat(currentFlat['land_area']),
-                    house_area: parseFloat(currentFlat['house_area']),
-                    decoration: currentFlat.decoration,
-                    old_price: addSpaces(parseInt(currentFlat['old_price']/10)),
-                    new_price: addSpaces(parseInt(currentFlat['new_price']/10)),
-                    discount: parseFloat(currentFlat.discount),
-                    img: currentFlat.photo
-                });
-            }
-        });
-        $http.get('/commerc.json').success(function(data) {
-            data.sort(sort);
-            for (var i=0;i<data.length; i+=1) {
-                var currentFlat = data[i];
-                $scope.commerc.push({
-                    lot: parseInt(currentFlat.id),
-                    type: currentFlat.type,
-                    address: currentFlat.address,
-                    district: currentFlat.district,
-                    metro: currentFlat.metro,
-                    distance: currentFlat.distance,
-                    area: parseFloat(currentFlat['area']),
-                    decoration: currentFlat.decoration,
-                    old_price: addSpaces(parseInt(currentFlat['old_price'])),
-                    new_price: addSpaces(parseInt(currentFlat['new_price'])),
-                    discount: parseFloat(currentFlat.discount),
-                    img: currentFlat.photo
-                });
-            }
-        });*/
         $http.get('/all.json').success(function(data) {
             data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
@@ -234,63 +173,16 @@
                     });
                     return result;
                 };
-                /*$scope.params.push({
-                    lot: parseInt(currentFlat.id),
-                    type: currentFlat.type,//commerc type
-                    district: currentFlat.district,//commerc type
-                    metro: currentFlat.metro,//commerc type
-                    distance: currentFlat.distance,//commerc type
-                    direction: currentFlat.direction, //country type
-                    land_area: parseFloat(currentFlat['land_area']),// country type
-                    house_area: parseFloat(currentFlat['house_area']),// country type
-                    estate: currentFlat.estate,
-                    address: currentFlat.address,
-                    rooms: parseInt(currentFlat['nb_rooms']),
-                    floor: parseInt(currentFlat.floor),
-                    decoration: currentFlat.decoration,
-                    old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
-                    new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
-                    discount: parseFloat(currentFlat.discount),
-                    img: currentFlat.photo
-                });*/
-                //}
-                /*else if (currentFlat.suptype == 'commerce') {
-                    $scope.commerc.push({
-                        lot: parseInt(currentFlat.id),
-                        type: currentFlat.type,
-                        address: currentFlat.address,
-                        district: currentFlat.district,
-                        metro: currentFlat.metro,
-                        distance: currentFlat.distance,
-                        area: parseFloat(currentFlat['area']),
-                        decoration: currentFlat.decoration,
-                        old_price: addSpaces(parseInt(currentFlat['old_price'])),
-                        new_price: addSpaces(parseInt(currentFlat['new_price'])),
-                        discount: parseFloat(currentFlat.discount),
-                        img: currentFlat.photo
-                    });
-                }*/
-                /*else if (currentFlat.suptype == 'country') {
-                    $scope.country.push({
-                        lot: parseInt(currentFlat.id),
-                        estate: currentFlat.estate,
-                        address: currentFlat.address,
-                        direction: currentFlat.direction,
-                        distance: parseInt(currentFlat.distance),
-                        type: currentFlat.type,
-                        land_area: parseFloat(currentFlat['land_area']),
-                        house_area: parseFloat(currentFlat['house_area']),
-                        decoration: currentFlat.decoration,
-                        old_price: addSpaces(parseInt(currentFlat['old_price']/10)),
-                        new_price: addSpaces(parseInt(currentFlat['new_price']/10)),
-                        discount: parseFloat(currentFlat.discount),
-                        img: currentFlat.photo
-                    });
-                }*/
+                $scope.test = function() {
+                    var center = 0, block = document.querySelector('.b-discount_inner'), form = document.querySelector('.b-form');
+                    if (parseInt(block.children.length/2)%2) center = parseInt(block.children.length/2)+1;
+                    else center = parseInt(block.children.length/2);
+                    block.children[center-1].insertAfter(form.cloneNode(true));
+                    form.parentNode.removeChild(form);
+                }
             }
         });
     }]);
-
     app.directive("repeatEnd", function () {
         return {
             restrict: "A",
@@ -301,5 +193,7 @@
             }
         };
     });
-
+    Element.prototype.insertAfter = function(elem) {
+        return this.parentNode.insertBefore(elem, this.nextSibling);
+    };
 })();
