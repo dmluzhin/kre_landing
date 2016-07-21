@@ -1,10 +1,7 @@
 .b-form {
   padding: 40px 0;
   background: $red;
-  min-width: 1200px;
-  @media screen and (max-width: 1200px) {
-    min-width: 100%;
-  }
+  min-width: 9999px;
   &_inner {
     width: 900px;
     margin: 0 auto;

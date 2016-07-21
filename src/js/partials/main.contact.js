@@ -130,38 +130,44 @@
                 var currentFlat = data[i];
                 if (currentFlat.suptype == 'city') {
                     $scope.params.push({
+                        id: currentFlat.id,
                         city: true,
                         desc: parseInt(currentFlat['nb_rooms'])+' - ком кв, '+currentFlat.decoration+', '+currentFlat.floor+'-й этаж',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),
-                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
-                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
-                        img: currentFlat.photo
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
+                        img: currentFlat.photo,
+                        link: 'http://www.kre.ru/offers/eliteflat/'+currentFlat.id
                     });
                 }
                 else if (currentFlat.suptype == 'country') {
                     $scope.params.push({
+                        id: currentFlat.id,
                         country: true,
                         desc: currentFlat.direction+currentFlat.distance+' км. от МКАД',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat['land_area'])+' сот., '+parseFloat(currentFlat['house_area']),
-                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
-                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
-                        img: currentFlat.photo
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
+                        img: currentFlat.photo,
+                        link: 'http://www.kre.ru/offers/outoftown/'+currentFlat.id
                     });
                 }
                 else if (currentFlat.suptype == 'commerce') {
                     $scope.params.push({
+                        id: currentFlat.id,
                         commerce: true,
                         desc: currentFlat.district+' м. '+currentFlat.metro+currentFlat.distance,
                         head: currentFlat.address,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),
-                        old_price: addSpaces(parseInt(currentFlat['old_price']/100)),
-                        new_price: addSpaces(parseInt(currentFlat['new_price']/100)),
-                        img: currentFlat.photo
+                        old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
+                        new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
+                        img: currentFlat.photo,
+                        link: 'http://www.kre.ru/offers/comsell/'+currentFlat.id
                     });
                 }
                 $scope.filter = function(items, attr) {
