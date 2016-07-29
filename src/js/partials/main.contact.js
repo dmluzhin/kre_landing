@@ -124,7 +124,7 @@
         function sort(obj1, obj2) {
             return obj2.discount - obj1.discount;
         }
-        $http.get('/all.json').success(function(data) {
+        $http.get('http://kre.server.garin.su/landing/sale/').success(function(data) {
             data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
