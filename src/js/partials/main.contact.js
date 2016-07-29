@@ -146,7 +146,7 @@
                     $scope.params.push({
                         id: currentFlat.id,
                         country: true,
-                        desc: currentFlat.direction+currentFlat.distance+' км. от МКАД',
+                        desc: currentFlat.direction + ' ' + currentFlat.distance+' км. от МКАД',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat['land_area'])+' сот., '+parseFloat(currentFlat['house_area']),
@@ -160,7 +160,7 @@
                     $scope.params.push({
                         id: currentFlat.id,
                         commerce: true,
-                        desc: currentFlat.district+' м. '+currentFlat.metro+currentFlat.distance,
+                        desc: currentFlat.district+' м.'+ ' ' + currentFlat.metro+ ' ' + currentFlat.distance,
                         head: currentFlat.address,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),

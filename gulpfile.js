@@ -31,7 +31,7 @@ var path = {
 
 	src: {
 		html: 'src/*.html', //Говорит, что будет брать файлы с расширением .html
-		js: 'src/js/main.js', //В стилях и скриптах нам понадобятся только main файлы
+		js: ['src/js/main.js','src/js/jquery.js', 'src/js/jquery-ui-1.9.2.custom.min.js', 'src/js/jquery.ui.touch-punch.min.js', 'src/js/jquery.arcticmodal-0.3.min.js', 'src/js/angular.min.js'], //В стилях и скриптах нам понадобятся только main файлы
 		style: ['src/style/main.scss','src/style/font.css'],
 		images: 'src/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
 		fonts: 'src/fonts/**/*.*' //То же самое для шрифтов
