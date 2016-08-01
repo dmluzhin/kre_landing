@@ -3,6 +3,8 @@ body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
   overflow-x: hidden !important;
+  overflow-y: visible!important;
+  margin: 0 !important;
 }
 .l-inner {
   width: 1200px;

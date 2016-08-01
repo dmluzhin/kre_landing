@@ -21,56 +21,6 @@
             e.preventDefault();
         }
     });
-
-    /*$('.j-slider-benefits').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        speed: 150,
-        responsive: [
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-
-    $('.j-slider-experience').slick({
-        mobileFirst: true,
-        slidesToShow: 1,
-        speed: 150,
-        responsive: [
-            {
-                breakpoint: 780,
-                settings: 'unslick'
-            }
-        ]
-    });*/
-
-    /*ymaps.ready(initMap);
-    var myMap;
-    var myPlacemark;
-
-    function initMap() {
-        myMap = new ymaps.Map('map', {
-            center: [55.78658653618388, 37.61672235865735],
-            zoom: 15
-        });
-
-        myPlacemark = new ymaps.Placemark([55.78658653618388, 37.61672235865735], {}, {
-            iconImageHref: '/img/map-icon.png',
-            iconImageSize: [73, 95],
-            iconImageOffset: [-15, -95],
-            iconLayout: 'default#image'
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-        myMap.behaviors.disable("scrollZoom");
-        myMap.behaviors.disable('drag');
-    }*/
-
     $('.j-scrollto-link').on('click', function(event) {
         $.scrollTo(
             $(this).data('scrollto-block'),

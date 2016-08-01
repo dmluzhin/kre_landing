@@ -18,7 +18,7 @@
         $scope.barkliBrokerFormData = {};
         $scope.isCallbackFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
-        $scope.currentTab = 1;
+        $scope.currentTab = 2;
         $scope.params = [];
         $scope.country = [];
         $scope.commerc = [];
@@ -139,7 +139,7 @@
                         old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
                         new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
                         img: currentFlat.photo,
-                        link: 'http://www.kre.ru/offers/eliteflat/'+currentFlat.id
+                        link: currentFlat.link
                     });
                 }
                 else if (currentFlat.suptype == 'country') {
@@ -153,21 +153,21 @@
                         old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
                         new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
                         img: currentFlat.photo,
-                        link: 'http://www.kre.ru/offers/outoftown/'+currentFlat.id
+                        link: currentFlat.link
                     });
                 }
                 else if (currentFlat.suptype == 'commerce') {
                     $scope.params.push({
                         id: currentFlat.id,
                         commerce: true,
-                        desc: currentFlat.district+' м.'+ ' ' + currentFlat.metro+ ' ' + currentFlat.distance,
-                        head: currentFlat.address,
+                        desc: currentFlat.metro+ ' ' + currentFlat.distance,
+                        head: currentFlat.address || currentFlat.name,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),
                         old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
                         new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
                         img: currentFlat.photo,
-                        link: 'http://www.kre.ru/offers/comsell/'+currentFlat.id
+                        link: currentFlat.link
                     });
                 }
                 $scope.filter = function(items, attr) {
