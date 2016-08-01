@@ -2,7 +2,7 @@
 body {
   font-family: 'LatoRegular', Verdana, sans-serif;
   color: #000;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 .l-inner {
   width: 1200px;

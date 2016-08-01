@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="HandheldFriendly" content="true"/>
 	<title>Kre Discounts</title>
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 	<meta name="keywords" content="Ключевые слова"/>
 	<meta name="viewport" content="width=640, user-scalable=0" />
 	<meta name="format-detection" content="telephone=no">
@@ -48,17 +50,17 @@
 		</div>
 		<div class="bottom-nav">
 			<ul class="bottom-nav-list">
-				<li class="bottom-nav-item undisplayable"><span ng-click="currentTab = 1" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</span></li>
-				<li class="bottom-nav-item"><span ng-click="currentTab = 2" ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</span></li>
-				<li class="bottom-nav-item"><span ng-click="currentTab = 3" ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</span></li>
-				<li class="bottom-nav-item"><span ng-click="currentTab = 4" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 1" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 2 " ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 3"  ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</span></li>
+				<li class="bottom-nav-item"><span ng-click="currentTab = 4" repeat-end="test()" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</span></li>
 			</ul>
 		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 1">
 		<div class="b-discount">
-			<div class="b-discount_inner">
-				<a ng-repeat="param in params" repeat-end="test()" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+			<div class="b-discount_inner" >
+				<a ng-repeat="param in params" repeat-end="test(0)" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -92,8 +94,8 @@
 	</div>
 	<div class="tabs" ng-show="currentTab == 2">
 		<div class="b-discount">
-			<div class="b-discount_inner">
-				<a ng-repeat="param in filter(params, 'city')" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+			<div class="b-discount_inner" repeat-end="test()">
+				<a ng-repeat="param in filter(params, 'city')"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -110,10 +112,20 @@
 						</div>
 					</div>
 				</a>
+				<div class="b-form">
+					<div class="b-form_inner" ng-submit="sendOrderForm()">
+						<h2 class="b-title m-title_white">Оставить заявку</h2>
+						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
+							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="tabs" ng-show="currentTab == 3">
+	<div class="tabs" ng-show="currentTab == 3" repeat-end="test()">
 		<div class="b-discount">
 			<div class="b-discount_inner">
 				<a ng-repeat="param in filter(params, 'country')" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
@@ -133,13 +145,23 @@
 						</div>
 					</div>
 				</a>
+				<div class="b-form">
+					<div class="b-form_inner" ng-submit="sendOrderForm()">
+						<h2 class="b-title m-title_white">Оставить заявку</h2>
+						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
+							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="tabs" ng-show="currentTab == 4">
+	<div class="tabs" ng-show="currentTab == 4" repeat-end="test()">
 		<div class="b-discount">
 			<div class="b-discount_inner">
-				<a ng-repeat="param in filter(params, 'commerce')" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+				<a ng-repeat="param in filter(params, 'commerce')" repeat-end="test(3)" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -156,6 +178,16 @@
 						</div>
 					</div>
 				</a>
+				<div class="b-form">
+					<div class="b-form_inner" ng-submit="sendOrderForm()">
+						<h2 class="b-title m-title_white">Оставить заявку</h2>
+						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
+							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -220,7 +252,6 @@
 				<form class="b-popup_form" name="callbackForm" novalidate>
 					<input type="text" class="b-popup_input" ng-model="callbackFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
 					<input type="tel" class="b-popup_input j-phone-masked" ng-model="callbackFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Ваш e-mail?" required />
-					<input type="text" class="b-popup_input j-input-time" ng-model="callbackFormData.time" ng-maxlength="50" placeholder="В какое время перезвонить?" />
 					<button class="b-button-send-form callback_send-form" type="submit">Отправить</button>
 				</form>
 			</div>

@@ -32,7 +32,7 @@
 
         $scope.sendCallbackForm = function() {
             if ($scope.callbackForm.$valid) {
-                $scope.callbackFormData['subject'] = 'Заказать обратный звонок ЖК Андреевский';
+                $scope.callbackFormData['subject'] = 'Заказать обратный звонок';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -124,7 +124,7 @@
         function sort(obj1, obj2) {
             return obj2.discount - obj1.discount;
         }
-        $http.get('http://kre.server.garin.su/landing/sale/').success(function(data) {
+        $http.get('http://www.kre.ru/landing/sale/').success(function(data) {
             data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
@@ -179,12 +179,19 @@
                     });
                     return result;
                 };
-                $scope.test = function() {
-                    var center = 0, block = document.querySelector('.b-discount_inner'), form = document.querySelector('.b-form');
-                    if (parseInt(block.children.length/2)%2) center = parseInt(block.children.length/2)+1;
-                    else center = parseInt(block.children.length/2);
-                    block.children[center-1].insertAfter(form.cloneNode(true));
-                    form.parentNode.removeChild(form);
+                $scope.test = function(current) {
+                    var center = 0,
+                        blocks = document.querySelectorAll('.b-discount_inner'),
+                        forms = document.querySelectorAll('.b-form');
+
+                    if (parseInt(blocks[current].children.length/2)%2) {
+                        center = parseInt(blocks[current].children.length / 2) + 1;
+                    }
+                    else {
+                        center = parseInt(blocks[current].children.length/2);
+                    }
+                    blocks[current].children[center-1].insertAfter(forms[current].cloneNode(true));
+                    forms[current].parentNode.removeChild(forms[current]);
                 }
             }
         });
@@ -202,4 +209,16 @@
     Element.prototype.insertAfter = function(elem) {
         return this.parentNode.insertBefore(elem, this.nextSibling);
     };
+   var  test = function() {
+
+        var center = 0, block = document.querySelector('.b-discount_inner'), form = document.querySelector('.b-form');
+        if (parseInt(block.children.length/2)%2) {
+            center = parseInt(block.children.length / 2) + 1;
+        }
+        else {
+            center = parseInt(block.children.length/2);
+        }
+        block.children[center-1].insertAfter(form.cloneNode(true));
+        form.parentNode.removeChild(form);
+    }
 })();

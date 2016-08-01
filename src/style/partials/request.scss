@@ -1,7 +1,7 @@
 .b-form {
   padding: 40px 0;
   background: $red;
-  min-width: 9999px;
+  min-width: 1920px;
   &_inner {
     width: 900px;
     margin: 0 auto;
@@ -53,5 +53,11 @@
       margin: 0 auto;
       /*margin-top: 44px;*/
     }
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .b-form {
+    position: relative;
+    left: -450px;
   }
 }
