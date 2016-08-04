@@ -62,7 +62,7 @@
 
         $scope.sendSignForm = function() {
             if ($scope.signForm.$valid) {
-                $scope.signFormData['subject'] = 'Заказать обратный звонок ЖК Андреевский';
+                $scope.signFormData['subject'] = 'Заказать обратный звонок Discount';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -87,8 +87,8 @@
         /*SENDING EMAIL TO BROKER START*/
         $scope.sendBarkliBrokerForm = function() {
             if ($scope.barkliBrokerForm.$valid) {
-                $scope.barkliBrokerFormData['subject'] = 'Заявка на квартиру ЖК Андреевский';
-                $scope.barkliBrokerFormData['email'] = 'voronkov@kre.ru';
+                $scope.barkliBrokerFormData['subject'] = 'Заявка на квартиру Discount';
+                $scope.barkliBrokerFormData['email'] = 'sales@kre.ru';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -132,7 +132,7 @@
                     $scope.params.push({
                         id: currentFlat.id,
                         city: true,
-                        desc: parseInt(currentFlat['nb_rooms'])+' - ком кв, '+currentFlat.decoration+', '+currentFlat.floor+'-й этаж',
+                        desc: parseInt(currentFlat['nb_rooms'])+' - ком. кв., '+currentFlat.decoration+', '+currentFlat.floor+'-й этаж',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),
@@ -146,10 +146,11 @@
                     $scope.params.push({
                         id: currentFlat.id,
                         country: true,
-                        desc: currentFlat.direction + ' ' + currentFlat.distance+' км. от МКАД',
+                        desc: currentFlat.direction + ' ' + currentFlat.distance+' км от МКАД',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
-                        square: parseFloat(currentFlat['land_area'])+' сот., '+parseFloat(currentFlat['house_area']),
+                        square: parseFloat(currentFlat['land_area'])+' сот., ',
+                        housearea: parseFloat(currentFlat['house_area']),
                         old_price: addSpaces(parseInt(currentFlat['old_price']/1)),
                         new_price: addSpaces(parseInt(currentFlat['new_price']/1)),
                         img: currentFlat.photo,

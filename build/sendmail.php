@@ -1,8 +1,8 @@
 <?php
-$to = ['sales@kre.ru','voronkov@kre.ru','assistcity@kre.ru']; // Основной email
+$to = ['sales@kre.ru', 'assistcity@kre.ru']; // Основной email
 
 if (isset($_POST['email'])) array_push($to, $_POST['email']);
-$subject = isset($_POST['subject']) ? $_POST['subject'] : 'Запрос с лендинга Баркли-Парк';
+$subject = isset($_POST['subject']) ? $_POST['subject'] : 'Запрос с лендинга Discount';
 if (isset($_POST['name'])) $message = '<p>Имя: ' . $_POST['name'] . '</p>';
 if (isset($_POST['phone'])) $message .= '<p>Телефон: ' . $_POST['phone'] . '</p>';
 if (isset($_POST['time'])) $message .= '<p>Время звонка: ' . $_POST['time'] . '</p>';
