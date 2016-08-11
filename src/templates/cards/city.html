@@ -1,4 +1,4 @@
-<a ng-repeat="param in filter(params, 'city')"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+<a ng-repeat="param in filter(params, 'city')" repeat-end="test(1)"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 	<div class="item-image-holder">
 		<img ng-src="{{param.img}}">
 	</div>
@@ -6,8 +6,8 @@
 	<div class="b-discount_item-description">
 		<div class="b-apartment">
 			<div class="b-apartment-head">{{param.head}}</div>
-			<p class="b-apartment-desc">{{param.desc}}</p>
-			<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+			<p class="b-apartment-desc">{{param.rooms}}{{param.decoration}}&nbsp;{{param.floor}}</p>
+			<span class="b-apartment-price">{{param.square}} м²</span>
 		</div>
 		<div class="b-salary">
 			<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>

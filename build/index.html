@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="HandheldFriendly" content="true"/>
-	<title>Элитная недвижимость со скидкой. Выгодно! Купить элитную недвижимость со скидкой до 20% | Агентство Contact Real Estate</title>
+	<title>Элитная недвижимость со скидкой. Выгодно! Купить элитную недвижимость со хорошей скидкой | Агентство Contact Real Estate</title>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-	<meta name="description" content="Contact Real Estate предлагает услуги по продаже объектов элитной недвижимости в Москве и Подмосковье. С нами вы сможете продать элитную квартиру, коттедж или таунхаус выгодно и в короткий срок" />
+	<meta name="description" content="Агентство Contact Real Estate поможет вам купить элитную недвижимость со значительной скидкой! Максимально выгодные предложения!" />
 	<meta name="keywords" content="Ключевые слова"/>
 	<meta name="viewport" content="width=640, user-scalable=0" />
 	<meta name="format-detection" content="telephone=no">
@@ -70,7 +70,7 @@
 						<div class="b-apartment">
 							<div class="b-apartment-head">{{param.head}}</div>
 							<p class="b-apartment-desc">{{param.desc}}</p>
-							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+							<span class="b-apartment-price">{{param.square}} м²</span>
 						</div>
 						<div class="b-salary">
 							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
@@ -96,7 +96,7 @@
 	<div class="tabs" ng-show="currentTab == 2">
 		<div class="b-discount">
 			<div class="b-discount_inner" repeat-end="test()">
-				<a ng-repeat="param in filter(params, 'city')"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+				<a ng-repeat="param in filter(params, 'city')" repeat-end="test(1)"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -104,8 +104,8 @@
 					<div class="b-discount_item-description">
 						<div class="b-apartment">
 							<div class="b-apartment-head">{{param.head}}</div>
-							<p class="b-apartment-desc">{{param.desc}}</p>
-							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+							<p class="b-apartment-desc">{{param.rooms}}{{param.decoration}}&nbsp;{{param.floor}}</p>
+							<span class="b-apartment-price">{{param.square}} м²</span>
 						</div>
 						<div class="b-salary">
 							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
@@ -129,7 +129,7 @@
 	<div class="tabs" ng-show="currentTab == 3" repeat-end="test()">
 		<div class="b-discount">
 			<div class="b-discount_inner">
-				<a ng-repeat="param in filter(params, 'country')" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+				<a ng-repeat="param in filter(params, 'country')" repeat-end="test(2)" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -138,7 +138,7 @@
 						<div class="b-apartment">
 							<div class="b-apartment-head">{{param.head}}</div>
 							<p class="b-apartment-desc">{{param.desc}}</p>
-							<span class="b-apartment-price">{{param.square}}&nbsp;{{param.housearea}} м<sup>2</sup></span>
+							<span class="b-apartment-price">{{param.square}}{{param.housearea}}</span>
 						</div>
 						<div class="b-salary">
 							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
@@ -171,7 +171,7 @@
 						<div class="b-apartment">
 							<div class="b-apartment-head">{{param.head}}</div>
 							<p class="b-apartment-desc">{{param.desc}}</p>
-							<span class="b-apartment-price">{{param.square}} м<sup>2</sup></span>
+							<span class="b-apartment-price">{{param.square}} м²</span>
 						</div>
 						<div class="b-salary">
 							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
