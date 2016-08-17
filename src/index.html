@@ -49,12 +49,25 @@
 		</div>
 	</div>
 	//= templates/subscribe.html
-	//= templates/request.html
 	<!--//= templates/experience.html-->
 	//= templates/footer.html
 	//= templates/arcticmodal.html
 	//= templates/subscribe-popup
 	//= templates/flatpopup.html
+	<div class="g-hide" ng-show="isOrderFormSended">
+		<div class="b-popup j-popup-gratitude-request">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup__subtext">Наш менеджер перезвонит вам</p>
+			<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
+	<div class="g-hide" ng-show="isSignFormSended">
+		<div class="b-popup j-popup-gratitude-sign">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup__subtext">Вы успешно подписались на обновления</p>
+			<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
 <!--SCRIPTS-->
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>

@@ -54,7 +54,11 @@
     }
   }
 }
-
+.b-popup__subtext {
+  margin-top: 20px;
+  font: 16px 'LatoLight', Verdana, sans-serif;
+  text-align: center;
+}
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .b-form {

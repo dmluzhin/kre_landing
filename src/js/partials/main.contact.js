@@ -19,6 +19,7 @@
         $scope.isCallbackFormSended = false;
         $scope.isSignFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
+        $scope.isOrderFormSended = false;
         $scope.currentTab = 2;
         $scope.params = [];
         $scope.country = [];
@@ -48,8 +49,8 @@
                     setTimeout(function() {
                         $('.j-popup-callback').arcticmodal('close');
                     }, 3000);
-                    ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');
+               /*     ga('send', 'event', 'callback', 'click button');
+                    yaCounter19895512.reachGoal('callback');*/
                 });
             }
         };
@@ -78,8 +79,6 @@
                     setTimeout(function() {
                         $('.j-popup-sign').arcticmodal('close');
                     }, 3000);
-                    ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');
                 });
             }
         };
@@ -113,6 +112,7 @@
         /*SENDING EMAIL TO BROKER END*/
 
         /*REQUEST FORM SENDING START*/
+
         $scope.sendOrderForm = function() {
             if ($scope.orderForm.$valid) {
                 $scope.orderFormData['subject'] = 'Disc';
@@ -122,16 +122,18 @@
                     data: $httpParamSerializerJQLike($scope.orderFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
-                    $('.j-popup-gratitude').arcticmodal();
+                    $('.j-popup-gratitude-request').arcticmodal();
                     setTimeout(function() {
-                        $('.j-popup-gratitude').arcticmodal('close');
+                        $('.j-popup-gratitude-request').arcticmodal('close');
                     }, 3000);
                     $scope.orderForm.$setPristine();
                     for (var prop in $scope.orderFormData) {
                         $scope.orderFormData[prop] = '';
                     }
-                    ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');
+                    $scope.isOrderFormSended = true;
+                    setTimeout(function() {
+                        $('.j-popup-gratitude-request').arcticmodal('close');
+                    }, 3000);
                 });
             }
             console.log($scope.orderForm);
@@ -153,13 +155,11 @@
                     $('.j-popup-gratitude').arcticmodal();
                     setTimeout(function() {
                         $('.j-popup-gratitude').arcticmodal('close');
-                    }, 3000);
+                    }, 15000);
                     $scope.orderForm.$setPristine();
                     for (var prop in $scope.orderFormData) {
                         $scope.orderFormData[prop] = '';
                     }
-                    ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');
                 });
             }
             console.log($scope.orderForm);
