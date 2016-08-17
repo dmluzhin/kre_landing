@@ -17,6 +17,7 @@
         $scope.orderFormData = {};
         $scope.barkliBrokerFormData = {};
         $scope.isCallbackFormSended = false;
+        $scope.isSignFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
         $scope.currentTab = 2;
         $scope.params = [];
@@ -111,6 +112,60 @@
 
         /*SENDING EMAIL TO BROKER END*/
 
+        /*REQUEST FORM SENDING START*/
+        $scope.sendOrderForm = function() {
+            if ($scope.orderForm.$valid) {
+                $scope.orderFormData['subject'] = 'Disc';
+                $http({
+                    method: 'POST',
+                    url: '/sendmail.php',
+                    data: $httpParamSerializerJQLike($scope.orderFormData),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(function(data) {
+                    $('.j-popup-gratitude').arcticmodal();
+                    setTimeout(function() {
+                        $('.j-popup-gratitude').arcticmodal('close');
+                    }, 3000);
+                    $scope.orderForm.$setPristine();
+                    for (var prop in $scope.orderFormData) {
+                        $scope.orderFormData[prop] = '';
+                    }
+                    ga('send', 'event', 'callback', 'click button');
+                    yaCounter19895512.reachGoal('callback');
+                });
+            }
+            console.log($scope.orderForm);
+        };
+
+        $scope.showSignPopup = function() {
+            if ($scope.isSignFormSended) $scope.isSignFormSended = false;
+            $('.j-popup-sign').arcticmodal();
+        };
+        $scope.sendSubscribeForm = function() {
+            if ($scope.orderForm.$valid) {
+                $scope.orderFormData['subject'] = 'Disc';
+                $http({
+                    method: 'POST',
+                    url: '/sendmail.php',
+                    data: $httpParamSerializerJQLike($scope.orderFormData),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(function(data) {
+                    $('.j-popup-gratitude').arcticmodal();
+                    setTimeout(function() {
+                        $('.j-popup-gratitude').arcticmodal('close');
+                    }, 3000);
+                    $scope.orderForm.$setPristine();
+                    for (var prop in $scope.orderFormData) {
+                        $scope.orderFormData[prop] = '';
+                    }
+                    ga('send', 'event', 'callback', 'click button');
+                    yaCounter19895512.reachGoal('callback');
+                });
+            }
+            console.log($scope.orderForm);
+        };
+        /*REQUEST FORM SENDING END*/
+
         function addSpaces(n) {
             var rx = /(\d+)(\d{3})/;
             return String(n)
@@ -135,7 +190,7 @@
                         /*desc: (parseInt(currentFlat['nb_rooms'])+' - ком. кв., '+currentFlat.decoration+', '+currentFlat.floor+'-й этаж'),*/
                         rooms: (parseInt(currentFlat['nb_rooms']))? (parseInt(currentFlat['nb_rooms'])+' - ком. кв., ') : ' ',
                         decoration: currentFlat.decoration || '',
-                        floor: (parseInt(currentFlat.floor))? (parseInt(currentFlat.floor) + '-й этаж') : '',
+                        floor: (parseInt(currentFlat.floor))? ', '+(parseInt(currentFlat.floor) + '-й этаж') : '',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
                         square: parseFloat(currentFlat.area),
@@ -194,8 +249,7 @@
                     else {
                         center = parseInt(blocks[current].children.length/2);
                     }
-                    blocks[current].children[center-1].insertAfter(forms[current].cloneNode(true));
-                    forms[current].parentNode.removeChild(forms[current]);
+                    blocks[current].children[center-1].insertAfter(forms[current]);
                 }
             }
         });
@@ -213,16 +267,4 @@
     Element.prototype.insertAfter = function(elem) {
         return this.parentNode.insertBefore(elem, this.nextSibling);
     };
-   var  test = function() {
-
-        var center = 0, block = document.querySelector('.b-discount_inner'), form = document.querySelector('.b-form');
-        if (parseInt(block.children.length/2)%2) {
-            center = parseInt(block.children.length / 2) + 1;
-        }
-        else {
-            center = parseInt(block.children.length/2);
-        }
-        block.children[center-1].insertAfter(form.cloneNode(true));
-        form.parentNode.removeChild(form);
-    }
 })();

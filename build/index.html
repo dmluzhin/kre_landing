@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="HandheldFriendly" content="true"/>
-	<title>Элитная недвижимость со скидкой. Выгодно! Купить элитную недвижимость со хорошей скидкой | Агентство Contact Real Estate</title>
+	<title>Элитная недвижимость со скидкой. Выгодно! Купить элитную недвижимость с хорошей скидкой | Агентство Contact Real Estate</title>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+				rel="stylesheet" type="text/css" />
 	<meta name="description" content="Агентство Contact Real Estate поможет вам купить элитную недвижимость со значительной скидкой! Максимально выгодные предложения!" />
 	<meta name="keywords" content="Ключевые слова"/>
 	<meta name="viewport" content="width=640, user-scalable=0" />
@@ -78,16 +79,6 @@
 						</div>
 					</div>
 				</a>
-				<div class="b-form">
-					<div class="b-form_inner" ng-submit="sendOrderForm()">
-						<h2 class="b-title m-title_white">Оставить заявку</h2>
-						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
-							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
-							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
-						</form>
-					</div>
-				</div>
 			</div>
 		</div>
 <!--		//= templates/request.html-->
@@ -104,23 +95,30 @@
 					<div class="b-discount_item-description">
 						<div class="b-apartment">
 							<div class="b-apartment-head">{{param.head}}</div>
-							<p class="b-apartment-desc">{{param.rooms}}{{param.decoration}}&nbsp;{{param.floor}}</p>
+							<p class="b-apartment-desc">{{param.rooms}}{{param.decoration}}{{param.floor}}</p>
 							<span class="b-apartment-price">{{param.square}} м²</span>
 						</div>
 						<div class="b-salary">
-							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
-							<span class="b-salary-initial">{{param.old_price}} <span class="rouble">₽</span></span>
+							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">&#8399;</span></span>
+							<span class="b-salary-initial">{{param.old_price}} <span class="rouble">&#8399;</span></span>
 						</div>
 					</div>
 				</a>
 				<div class="b-form">
-					<div class="b-form_inner" ng-submit="sendOrderForm()">
+					<div class="b-form_inner">
 						<h2 class="b-title m-title_white">Оставить заявку</h2>
-						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
-							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+						<form class="b-form_fields" name="orderForm" novalidate ng-submit="sendOrderForm()">
+							<input type="text" class="b-form_input" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required>
 							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
 						</form>
+					</div>
+				</div>
+				<div class="g-hide">
+					<div class="b-popup j-popup-gratitude">
+						<p class="b-title">Спасибо.</p>
+						<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+						<div class="b-popup__close j-popup-close"></div>
 					</div>
 				</div>
 			</div>
@@ -147,13 +145,20 @@
 					</div>
 				</a>
 				<div class="b-form">
-					<div class="b-form_inner" ng-submit="sendOrderForm()">
+					<div class="b-form_inner">
 						<h2 class="b-title m-title_white">Оставить заявку</h2>
-						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
-							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+						<form class="b-form_fields" name="orderForm" novalidate ng-submit="sendOrderForm()">
+							<input type="text" class="b-form_input" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required>
 							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
 						</form>
+					</div>
+				</div>
+				<div class="g-hide">
+					<div class="b-popup j-popup-gratitude">
+						<p class="b-title">Спасибо.</p>
+						<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+						<div class="b-popup__close j-popup-close"></div>
 					</div>
 				</div>
 			</div>
@@ -180,13 +185,20 @@
 					</div>
 				</a>
 				<div class="b-form">
-					<div class="b-form_inner" ng-submit="sendOrderForm()">
+					<div class="b-form_inner">
 						<h2 class="b-title m-title_white">Оставить заявку</h2>
-						<form class="b-form_fields ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" name="orderForm" novalidate="">
-							<input type="text" class="b-form_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-							<input type="tel" class="b-form_input j-phone-masked ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+						<form class="b-form_fields" name="orderForm" novalidate ng-submit="sendOrderForm()">
+							<input type="text" class="b-form_input" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required>
 							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
 						</form>
+					</div>
+				</div>
+				<div class="g-hide">
+					<div class="b-popup j-popup-gratitude">
+						<p class="b-title">Спасибо.</p>
+						<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+						<div class="b-popup__close j-popup-close"></div>
 					</div>
 				</div>
 			</div>
@@ -195,11 +207,35 @@
 	<div class="b-subscription">
 		<div class="b-subscription_inner">
 			<h3 class="b-title m-title_white">Подписаться на обновления</h3>
-			<form class="b-subscription_fields">
-				<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?">
-				<input class="b-subscription_input" type="text" placeholder="E-MAIL">
+			<form class="b-subscription_fields" ng-submit="sendSubscribeForm()">
+				<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+				<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
 				<button class="b-button-sign">Подписаться</button>
 			</form>
+		</div>
+	</div>
+	<div class="g-hide">
+		<div class="b-popup j-popup-gratitude">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+			<div class="b-popup__close j-popup-close"></div>
+		</div>
+	</div>
+	<div class="b-form">
+		<div class="b-form_inner">
+			<h2 class="b-title m-title_white">Оставить заявку</h2>
+			<form class="b-form_fields" name="orderForm" novalidate ng-submit="sendOrderForm()">
+				<input type="text" class="b-form_input" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+				<input type="tel" class="b-form_input" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required>
+				<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+			</form>
+		</div>
+	</div>
+	<div class="g-hide">
+		<div class="b-popup j-popup-gratitude">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup__subtext">Наш менеджер перезвонит вам в указанное время.</p>
+			<div class="b-popup__close j-popup-close"></div>
 		</div>
 	</div>
 	<!--//= templates/experience.html-->
@@ -211,7 +247,7 @@
 				</div>
 				<div class="b-footer_column">
 					<ul>
-						<li>Москва,ул.Арбат,д.13/36</li>
+						<li>Москва, ул. Арбат, д. 13/36</li>
 						<li>Телефон: +7 (495) 104-51-02</li>
 						<li>E-mail:&nbsp;<a href="mailto:sales@kre.ru" class="b-email m-email_footer" onclick="ga('send', 'event', 'click email', 'click button'); yaCounter19895512.reachGoal('click email');" title="Email">sales@kre.ru</a></li>
 						<!--<li><a class="m-email_footer print-ver" href="javaScript:window.print();">Версия для печати</a></li>-->
@@ -271,6 +307,8 @@
 			<div class="b-popup__close j-popup-close"></div>
 		</div>
 	</div>
+	
+	<!--Так же как и обычные формы-->
 	
 <!--SCRIPTS-->
 	<script type="text/javascript" src="js/jquery.js"></script>
