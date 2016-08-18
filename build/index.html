@@ -186,14 +186,13 @@
 	<div class="b-subscription">
 		<div class="b-subscription_inner">
 			<h3 class="b-title m-title_white">Подписаться на обновления</h3>
-			<form class="b-subscription_fields" ng-submit="sendSignForm()">
-				<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-				<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+			<form class="b-subscription_fields" name="subForm" ng-submit="sendSignForm()">
+				<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+				<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
 				<button class="b-button-sign" type="submit">Подписаться</button>
 			</form>
 		</div>
 	</div>
-	<!--//= templates/experience.html-->
 	<footer class="b-footer">
 		<div class="l-inner">
 			<div class="b-footer_row">
@@ -219,6 +218,7 @@
 			</div>
 		</div>
 	</footer>
+	<!--Попап Оставить заявку-->
 	<div class="g-hide">
 		<div class="b-popup j-popup-callback" ng-submit="sendCallbackForm()">
 			<div ng-hide="isCallbackFormSended">
@@ -238,32 +238,34 @@
 			<div class="b-popup_close j-popup-close"></div>
 		</div>
 	</div>
+	
+	<!--Попап Подписка-->
 	<div class="g-hide">
-		<div class="b-popup j-popup-sign" ng-submit="sendSignForm()">
+		<div class="b-popup j-popup-sign">
 			<div ng-hide="isSignFormSended">
 				<p class="b-title">Подписаться</p>
-				<form class="b-popup_form" name="callbackForm" novalidate>
-					<input type="text" class="b-popup_input" ng-model="callbackFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
-					<input type="tel" class="b-popup_input j-phone-masked" ng-model="callbackFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Ваш e-mail?" required />
-					<button class="b-button-send-form callback_send-form" type="submit">Отправить</button>
+				<form class="b-popup_form" name="signForm" novalidate ng-submit="sendSignForm()">
+					<input type="text" class="b-popup_input" ng-model="signFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
+					<input type="email" class="b-popup_input" ng-model="signFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Ваш e-mail?" required />
+					<button class="b-button-send-form" type="submit">Подписаться</button>
 				</form>
 			</div>
 			<div ng-show="isSignFormSended">
 				<p class="b-title">Спасибо.</p>
-				<p class="b-popup_subtext">Наш менеджер перезвонит вам в указанное время.</p>
+				<p class="b-popup_subtext">Вы успешно подписались на обновления.</p>
 			</div>
 			<div class="b-popup_close j-popup-close"></div>
-		</div>
-	</div>
-	<div class="g-hide">
-		<div class="b-popup j-popup-gratitude" ng-show="">
-			<p class="b-title">Спасибо.</p>
-			<p class="b-popup__subtext">Вы успешно подписаны</p>
-			<div class="b-popup__close j-popup-close"></div>
+			</div>
 		</div>
 	</div>
 	
-	<!--Так же как и обычные формы-->
+	<div class="g-hide" ng-show="issubFormSended">
+		<div class="b-popup j-popup-gratitude-sign">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup__subtext">Вы успешно подписались на обновления</p>
+			<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
 	
 	<div class="g-hide" ng-show="isOrderFormSended">
 		<div class="b-popup j-popup-gratitude-request">
@@ -272,13 +274,7 @@
 			<div class="b-popup_close j-popup-close"></div>
 		</div>
 	</div>
-	<div class="g-hide" ng-show="isSignFormSended">
-		<div class="b-popup j-popup-gratitude-sign">
-			<p class="b-title">Спасибо.</p>
-			<p class="b-popup__subtext">Вы успешно подписались на обновления</p>
-			<div class="b-popup_close j-popup-close"></div>
-		</div>
-	</div>
+	
 <!--SCRIPTS-->
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>

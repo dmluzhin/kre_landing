@@ -14,12 +14,15 @@
     app.controller('mainController', ['$scope', '$http', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike) {
 
         $scope.callbackFormData = {};
+        $scope.signFormData = {};
         $scope.orderFormData = {};
+        $scope.subFormData = {}
         $scope.barkliBrokerFormData = {};
         $scope.isCallbackFormSended = false;
         $scope.isSignFormSended = false;
-        $scope.isBarkliBrokerFormSended = false;
+        $scope.issubFormSended = false;
         $scope.isOrderFormSended = false;
+        $scope.isBarkliBrokerFormSended = false;
         $scope.currentTab = 2;
         $scope.params = [];
         $scope.country = [];
@@ -35,6 +38,7 @@
         $scope.sendCallbackForm = function() {
             if ($scope.callbackForm.$valid) {
                 $scope.callbackFormData['subject'] = 'Заказать обратный звонок';
+                $scope.callbackFormData['email'] = 'sales@kre.ru';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -49,8 +53,6 @@
                     setTimeout(function() {
                         $('.j-popup-callback').arcticmodal('close');
                     }, 3000);
-               /*     ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');*/
                 });
             }
         };
@@ -59,63 +61,39 @@
         /*SIGN POPUP START*/
         $scope.showSignPopup = function() {
             if ($scope.isSignFormSended) $scope.isSignFormSended = false;
-            $('.j-popup-sign').arcticmodal();
+            $('.j-popup-gratitude-sign').arcticmodal();
         };
 
         $scope.sendSignForm = function() {
             if ($scope.signForm.$valid) {
-                $scope.signFormData['subject'] = 'Заказать обратный звонок Discount';
+                $scope.signFormData['subject'] = 'Подписка на Discount';
+                /*$scope.signFormData['email'] = 'sales@kre.ru', 'reklama@kre.ru';*/
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
-                    data: $httpParamSerializerJQLike($scope.callbackFormData),
+                    data: $httpParamSerializerJQLike($scope.signFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
-                    $scope.callbackForm.$setPristine();
-                    for (var prop in $scope.callbackFormData) {
-                        $scope.callbackFormData[prop] = '';
+                    $scope.signForm.$setPristine();
+                    for (var prop in $scope.signFormData) {
+                        $scope.signFormData[prop] = '';
                     }
-                    $scope.isCallbackFormSended = true;
+                    $scope.isSignFormSended = true;
                     setTimeout(function() {
-                        $('.j-popup-sign').arcticmodal('close');
+                        $('.j-popup-gratitude-sign').arcticmodal('close');
                     }, 3000);
                 });
             }
+            console.log($scope.signForm);
         };
         /*SIGN POPUP END*/
-
-        /*SENDING EMAIL TO BROKER START*/
-        $scope.sendBarkliBrokerForm = function() {
-            if ($scope.barkliBrokerForm.$valid) {
-                $scope.barkliBrokerFormData['subject'] = 'Заявка на квартиру Discount';
-                $scope.barkliBrokerFormData['email'] = 'sales@kre.ru';
-                $http({
-                    method: 'POST',
-                    url: '/sendmail.php',
-                    data: $httpParamSerializerJQLike($scope.barkliBrokerFormData),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }).success(function(data) {
-                    $scope.barkliBrokerForm.$setPristine();
-                    for (var prop in $scope.barkliBrokerFormData) {
-                        $scope.barkliBrokerFormData[prop] = '';
-                    }
-                    $scope.isBarkliBrokerFormSended = true;
-                    setTimeout(function() {
-                        $('.j-popup-barkli-broker').arcticmodal('close');
-                    }, 3000);
-                    ga('send', 'event', 'callback', 'click button');
-                    yaCounter19895512.reachGoal('callback');
-                });
-            }
-        };
-
-        /*SENDING EMAIL TO BROKER END*/
 
         /*REQUEST FORM SENDING START*/
 
         $scope.sendOrderForm = function() {
             if ($scope.orderForm.$valid) {
-                $scope.orderFormData['subject'] = 'Disc';
+                $scope.orderFormData['subject'] = 'Заказать обратный звонок ';
+                $scope.orderFormData['subject'] = 'sales@kre.ru';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -136,36 +114,38 @@
                     }, 3000);
                 });
             }
-            console.log($scope.orderForm);
         };
+
+        /*$scope.sendSubForm = function() {
+            if ($scope.subForm.$valid) {
+                $scope.subFormData['subject'] = 'Заказать обратный звонок ';
+                $scope.subFormData['subject'] = 'sales@kre.ru', 'reklama@kre.ru';
+                $http({
+                    method: 'POST',
+                    url: '/sendmail.php',
+                    data: $httpParamSerializerJQLike($scope.subFormData),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(function(data) {
+                    $('.j-popup-gratitude-sub').arcticmodal();
+                    setTimeout(function() {
+                        $('.j-popup-gratitude-sub').arcticmodal('close');
+                    }, 3000);
+                    $scope.subForm.$setPristine();
+                    for (var prop in $scope.subFormData) {
+                        $scope.subFormData[prop] = '';
+                    }
+                    $scope.issubFormSended = true;
+                    setTimeout(function() {
+                        $('.j-popup-gratitude-sub').arcticmodal('close');
+                    }, 3000);
+                });
+            }
+        };*/
 
         $scope.showSignPopup = function() {
             if ($scope.isSignFormSended) $scope.isSignFormSended = false;
             $('.j-popup-sign').arcticmodal();
         };
-        $scope.sendSubscribeForm = function() {
-            if ($scope.orderForm.$valid) {
-                $scope.orderFormData['subject'] = 'Disc';
-                $http({
-                    method: 'POST',
-                    url: '/sendmail.php',
-                    data: $httpParamSerializerJQLike($scope.orderFormData),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }).success(function(data) {
-                    $('.j-popup-gratitude').arcticmodal();
-                    setTimeout(function() {
-                        $('.j-popup-gratitude').arcticmodal('close');
-                    }, 15000);
-                    $scope.orderForm.$setPristine();
-                    for (var prop in $scope.orderFormData) {
-                        $scope.orderFormData[prop] = '';
-                    }
-                });
-            }
-            console.log($scope.orderForm);
-        };
-        /*REQUEST FORM SENDING END*/
-
         function addSpaces(n) {
             var rx = /(\d+)(\d{3})/;
             return String(n)

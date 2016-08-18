@@ -1,3 +1,4 @@
+<!--Попап Оставить заявку-->
 <div class="g-hide">
 	<div class="b-popup j-popup-callback" ng-submit="sendCallbackForm()">
 		<div ng-hide="isCallbackFormSended">
@@ -14,6 +15,42 @@
 			<p class="b-title">Спасибо.</p>
 			<p class="b-popup_subtext">Наш менеджер перезвонит вам в указанное время.</p>
 		</div>
+		<div class="b-popup_close j-popup-close"></div>
+	</div>
+</div>
+
+<!--Попап Подписка-->
+<div class="g-hide">
+	<div class="b-popup j-popup-sign">
+		<div ng-hide="isSignFormSended">
+			<p class="b-title">Подписаться</p>
+			<form class="b-popup_form" name="signForm" novalidate ng-submit="sendSignForm()">
+				<input type="text" class="b-popup_input" ng-model="signFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
+				<input type="email" class="b-popup_input" ng-model="signFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Ваш e-mail?" required />
+				<button class="b-button-send-form" type="submit">Подписаться</button>
+			</form>
+		</div>
+		<div ng-show="isSignFormSended">
+			<p class="b-title">Спасибо.</p>
+			<p class="b-popup_subtext">Вы успешно подписались на обновления.</p>
+		</div>
+		<div class="b-popup_close j-popup-close"></div>
+		</div>
+	</div>
+</div>
+
+<div class="g-hide" ng-show="issubFormSended">
+	<div class="b-popup j-popup-gratitude-sign">
+		<p class="b-title">Спасибо.</p>
+		<p class="b-popup__subtext">Вы успешно подписались на обновления</p>
+		<div class="b-popup_close j-popup-close"></div>
+	</div>
+</div>
+
+<div class="g-hide" ng-show="isOrderFormSended">
+	<div class="b-popup j-popup-gratitude-request">
+		<p class="b-title">Спасибо.</p>
+		<p class="b-popup__subtext">Наш менеджер перезвонит вам</p>
 		<div class="b-popup_close j-popup-close"></div>
 	</div>
 </div>

@@ -1,9 +1,9 @@
 <div class="b-subscription">
 	<div class="b-subscription_inner">
 		<h3 class="b-title m-title_white">Подписаться на обновления</h3>
-		<form class="b-subscription_fields" ng-submit="sendSignForm()">
-			<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-			<input class="b-subscription_input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required="">
+		<form class="b-subscription_fields" name="subForm" ng-submit="sendSignForm()">
+			<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+			<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
 			<button class="b-button-sign" type="submit">Подписаться</button>
 		</form>
 	</div>
