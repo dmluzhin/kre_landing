@@ -3,6 +3,9 @@
   margin: 15px 0;
   background: $red;
   min-width: 1920px;
+  @media screen and (max-width: 1024px) {
+    min-width: 100%;
+  }
   &_inner {
     width: 900px;
     margin: 0 auto;

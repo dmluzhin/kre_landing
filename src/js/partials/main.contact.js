@@ -37,8 +37,7 @@
 
         $scope.sendCallbackForm = function() {
             if ($scope.callbackForm.$valid) {
-                $scope.callbackFormData['subject'] = 'Заказать обратный звонок';
-                $scope.callbackFormData['email'] = 'sales@kre.ru';
+                $scope.callbackFormData['subject'] = 'Заказать обратный звонок. Скидки.';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -67,7 +66,6 @@
         $scope.sendSignForm = function() {
             if ($scope.signForm.$valid) {
                 $scope.signFormData['subject'] = 'Подписка на Discount';
-                /*$scope.signFormData['email'] = 'sales@kre.ru', 'reklama@kre.ru';*/
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -92,8 +90,7 @@
 
         $scope.sendOrderForm = function() {
             if ($scope.orderForm.$valid) {
-                $scope.orderFormData['subject'] = 'Заказать обратный звонок ';
-                $scope.orderFormData['subject'] = 'sales@kre.ru';
+                $scope.orderFormData['subject'] = 'Заказать обратный звонок';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
@@ -116,19 +113,18 @@
             }
         };
 
-        /*$scope.sendSubForm = function() {
+        $scope.sendSubForm = function() {
             if ($scope.subForm.$valid) {
-                $scope.subFormData['subject'] = 'Заказать обратный звонок ';
-                $scope.subFormData['subject'] = 'sales@kre.ru', 'reklama@kre.ru';
+                $scope.subFormData['subject'] = 'Подписка на Discount';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',
                     data: $httpParamSerializerJQLike($scope.subFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
-                    $('.j-popup-gratitude-sub').arcticmodal();
+                    $('.j-popup-gratitude-sign').arcticmodal();
                     setTimeout(function() {
-                        $('.j-popup-gratitude-sub').arcticmodal('close');
+                        $('.j-popup-gratitude-sign').arcticmodal('close');
                     }, 3000);
                     $scope.subForm.$setPristine();
                     for (var prop in $scope.subFormData) {
@@ -136,11 +132,11 @@
                     }
                     $scope.issubFormSended = true;
                     setTimeout(function() {
-                        $('.j-popup-gratitude-sub').arcticmodal('close');
+                        $('.j-popup-gratitude-sign').arcticmodal('close');
                     }, 3000);
                 });
             }
-        };*/
+        };
 
         $scope.showSignPopup = function() {
             if ($scope.isSignFormSended) $scope.isSignFormSended = false;

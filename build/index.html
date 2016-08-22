@@ -79,6 +79,16 @@
 						</div>
 					</div>
 				</a>
+				<div class="b-form">
+					<div class="b-form_inner">
+						<h2 class="b-title m-title_white">Оставить заявку</h2>
+						<form class="b-form_fields" name="orderForm" novalidate ng-submit="sendOrderForm()">
+							<input type="text" class="b-form_input" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+							<input type="tel" class="b-form_input" ng-model="orderFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Телефон" required>
+							<button class="b-button-send-form m-button-send-form_contact" type="submit">оставить заявку</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 <!--		//= templates/request.html-->
@@ -99,8 +109,8 @@
 							<span class="b-apartment-price">{{param.square}} м²</span>
 						</div>
 						<div class="b-salary">
-							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">&#8399;</span></span>
-							<span class="b-salary-initial">{{param.old_price}} <span class="rouble">&#8399;</span></span>
+							<span class="b-salary-discount">{{param.new_price}} <span class="rouble">₽</span></span>
+							<span class="b-salary-initial">{{param.old_price}} <span class="rouble">₽</span></span>
 						</div>
 					</div>
 				</a>
@@ -186,9 +196,9 @@
 	<div class="b-subscription">
 		<div class="b-subscription_inner">
 			<h3 class="b-title m-title_white">Подписаться на обновления</h3>
-			<form class="b-subscription_fields" name="subForm" ng-submit="sendSignForm()">
-				<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="orderFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-				<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="orderFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
+			<form class="b-subscription_fields" name="subForm" novalidate ng-submit="sendSubForm()">
+				<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="subFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+				<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="subFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
 				<button class="b-button-sign" type="submit">Подписаться</button>
 			</form>
 		</div>
