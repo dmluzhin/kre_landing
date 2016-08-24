@@ -90,7 +90,7 @@
 
         $scope.sendOrderForm = function() {
             if ($scope.orderForm.$valid) {
-                $scope.orderFormData['subject'] = 'Заказать обратный звонок';
+                $scope.orderFormData['subject'] = 'Заказать обратный звонок. Скидки.';
                 $http({
                     method: 'POST',
                     url: '/sendmail.php',

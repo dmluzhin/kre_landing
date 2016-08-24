@@ -20,9 +20,12 @@
 }
 .b-contacts {
   position: absolute;
-  right: 55px;
+  right: 15px;
   top: 40px;
-  width: 200px;
+  width: 240px;
+  @media screen and (max-width: 1200px) {
+    right: 0;
+  }
 }
 .b-phone {
   font: 22px 'LatoBold', Verdana, sans-serif;

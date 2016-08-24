@@ -87,8 +87,33 @@
     }
   }
 }
+
+.inner {
+  background: #e0e6ec;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 45px;
+  @media screen and (max-width: 1020px) {
+    width: 100%;
+  }
+}
+.textfield {
+  width: 100%;
+  background-color: #e0e6ec;
+
+  h2 {
+    font: 34px/40px 'LatoBold', Verdana, sans-serif;
+    text-align: center;
+  }
+  p {
+    color: #11161a;
+    font: 17px/28px 'LatoRegular', Verdana, sans-serif;
+    margin-top: 18px;
+    opacity: .75;
+  }
+}
 .b-apartment {
-  /*width: 62%;*/
   height: 100%;
   display: inline-block;
   box-sizing: border-box;

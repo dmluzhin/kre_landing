@@ -40,11 +40,14 @@
         }
       }
     }
+    a {
+
+    }
   }
   .b-social {
     @media screen and (max-width: 1023px) {
       float: left;
-      margin-top: -30px;
+      margin-top: 10px;
       margin-bottom: 50px;
     }
   }
@@ -70,5 +73,12 @@
   .b-soc_item_tw {
     margin-right: 5px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpmNjdjMTdiYS0zNThiLWQyNDctYjlmZC0zZTI0ODQyZWI4NzEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTMyRTJGRTJCQjg5MTFFNUFDNzVBNkIzMEZEMTdFRDEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTMyRTJGRTFCQjg5MTFFNUFDNzVBNkIzMEZEMTdFRDEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OWFmYzQ2NDUtZWMwNS01YTQ1LTgwMGEtNjIwMzlmY2EyYWEwIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ODQwYWMzYmUtYjkxZC0xMWU1LWI1NjctZTJiNTY2MTY2NWE0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jfPI+QAAANVJREFUeNqM0j8LQVEYx/EnSSkT0x2MGC3K7k+RxcBmsVgt3on3YLFbbmKgbDIrSSYlI1GO76N7o9u5dZ/6nOX2e845z7lijEmiAAnRxx5PbNBEDyX92MIVVUuwbey1QycmInek4WKCsvyqK/a6YS7esReBzifMvOPaaqgni9Ohglygc9YTVofvSoc4ViZ6PZDSnf3BOHDxjhAe+wP1w7r7OkJQZ5EJhlUCA5xDgvqcxf+n1CWPGkbYhgT1Srngf6DTvqCBOhy88cLx+5YiUyxtI/8IMAA8Qbm8pxNQogAAAABJRU5ErkJggg==') #2ca9b1 no-repeat center center;
+  }
+  .print-ver {
+    color: #2e557c;
+    background: none;
+    font: 14px 'LatoBold', Verdana, sans-serif;
+    margin-top: 10px;
+    display: block;
   }
 }

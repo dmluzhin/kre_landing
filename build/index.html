@@ -126,6 +126,22 @@
 				</div>
 			</div>
 		</div>
+		<div class="b-subscription">
+			<div class="b-subscription_inner">
+				<h3 class="b-title m-title_white">Подписаться на обновления</h3>
+				<form class="b-subscription_fields" name="subForm" novalidate ng-submit="sendSubForm()">
+					<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="subFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+					<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="subFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
+					<button class="b-button-sign" type="submit">Подписаться</button>
+				</form>
+			</div>
+		</div>
+		<div class="textfield">
+			<div class="inner">
+				<h2>Городская недвижимость</h2>
+				<p>Рынок элитной недвижимости Москвы представлен особняками, пентхаусами, квартирами, апартаментами и лофтами в самых престижных районах: Арбате, Тверском, Хамовниках, Плющихе, Остоженке, Замоскворечье, Новослободском. Специалисты компании Contact Real Estate помогут подобрать варианты квартир свободной планировки или с эксклюзивной дизайнерской отделкой. Агентство располагает уникальной и самой полной базой данных элитной недвижимости. В данном разделе опубликованы подробные описания объектов с фотогалереей и техническими характеристиками. К услугам наших клиентов: акции, спецпредложения и скидки на элитные квартиры в Москве.</p>
+			</div>
+		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 3" repeat-end="test()">
 		<div class="b-discount">
@@ -157,6 +173,22 @@
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="b-subscription">
+			<div class="b-subscription_inner">
+				<h3 class="b-title m-title_white">Подписаться на обновления</h3>
+				<form class="b-subscription_fields" name="subForm" novalidate ng-submit="sendSubForm()">
+					<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="subFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+					<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="subFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
+					<button class="b-button-sign" type="submit">Подписаться</button>
+				</form>
+			</div>
+		</div>
+		<div class="textfield">
+			<div class="inner">
+				<h2>Загородная недвижимость</h2>
+				<p>Contact Real Estate располагает обширной базой загородной недвижимости по всем подмосковным направлениям. К продаже предлагаются готовые дома в коттеджных поселках, таунхаусы, усадьбы, жилые комплексы. Элитные загородные дома расположены в экологически чистых зонах с вековыми лесными массивами и водоемами, на территории с собственной развитой инфраструктурой. Агентство Contact Real Estate предлагает приобрести элитную загородную недвижимость как для собственного проживания, так и долгосрочных инвестиций. На сайте представлены самые выгодные предложения, акции, скидки на дома в Подмосковье.</p>
 			</div>
 		</div>
 	</div>
@@ -192,22 +224,34 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="b-subscription">
-		<div class="b-subscription_inner">
-			<h3 class="b-title m-title_white">Подписаться на обновления</h3>
-			<form class="b-subscription_fields" name="subForm" novalidate ng-submit="sendSubForm()">
-				<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="subFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
-				<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="subFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
-				<button class="b-button-sign" type="submit">Подписаться</button>
-			</form>
+		<div class="b-subscription">
+			<div class="b-subscription_inner">
+				<h3 class="b-title m-title_white">Подписаться на обновления</h3>
+				<form class="b-subscription_fields" name="subForm" novalidate ng-submit="sendSubForm()">
+					<input class="b-subscription_input" type="text" placeholder="Как Вас зовут?" ng-model="subFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Имя" required="">
+					<input class="b-subscription_input" type="email" placeholder="E-MAIL" ng-model="subFormData.email" ng-minlength="5" ng-maxlength="30" placeholder="Телефон" required="">
+					<button class="b-button-sign" type="submit">Подписаться</button>
+				</form>
+			</div>
+		</div>
+		<div class="textfield">
+			<div class="inner">
+				<h2>Коммерческая недвижимость</h2>
+				<p>Объем предложения коммерческой недвижимости в Москве на сегодняшний день способен удовлетворить запросы самого требовательного покупателя или арендатора. К услугам клиентов предлагаются торговые помещения, офисные и административные здания, расположенные в разных районах города. Компания Contact Real Estate поможет купить или арендовать коммерческую недвижимость в Москве на самых выгодных условиях с гарантией правовой и финансовой защиты. В каталоге представлены эксклюзивные предложения, действующие акции, скидки на коммерческие помещения. К каждому объекту прилагается подробное описание, фотографии и технические характеристики.</p>
+			</div>
 		</div>
 	</div>
+
 	<footer class="b-footer">
 		<div class="l-inner">
 			<div class="b-footer_row">
 				<div class="b-footer_column">
 					<img src="images/logo-footer.png"/>
+					<ul>
+						<li><a class="print-ver" href="http://kre.ru/">Агентство элитной недвижимости</a></li>
+						<li><a class="print-ver" href="http://www.kre.ru/offers/elitenew/">Элитные жилые комплексы</a></li>
+						<li><a class="print-ver" href="http://www.kre.ru/offers/comsell/">Коммерческая недвижимость Москвы</a></li>
+					</ul>
 				</div>
 				<div class="b-footer_column">
 					<ul>
