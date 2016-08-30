@@ -17,6 +17,7 @@
       width: 100%;
       /*padding: 0 65px;*/
       justify-content: center;
+      flex-direction: column;
     }
   }
   &_item {
@@ -27,8 +28,8 @@
     position: relative;
     display: block;
     @media screen and (max-width: 640px){
-      width: 100%;
-      margin: 15px 65px;
+      width: 480px;
+      margin: 15px auto;
     }
   }
   &_flag {
@@ -90,10 +91,10 @@
 
 .inner {
   background: #e0e6ec;
-  max-width: 1200px;
+  max-width: 990px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 45px;
+  padding: 45px 60px;
   @media screen and (max-width: 1020px) {
     width: 100%;
   }
@@ -161,5 +162,8 @@
     @extend .b-apartment-desc;
     display: block;
     text-decoration: line-through;
+    .rouble {
+      font-size: 13px;
+    }
   }
 }

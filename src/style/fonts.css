@@ -38,3 +38,13 @@ url('../fonts/LatoBold/LatoBold.svg') format('svg');
   font-style: normal;
   font-weight: normal;
 }
+@font-face {
+  font-family: 'FontAwesome';
+  src:url('../fonts/font-awesome-4.6.3/fontawesome-webfont.eot?');
+  src:url('../fonts/font-awesome-4.6.3/fontawesome-webfont.eot?#iefix-5zqyhv') format('embedded-opentype'),
+  url('../fonts/font-awesome-4.6.3/fontawesome-webfont.woff') format('woff'),
+  url('../fonts/font-awesome-4.6.3/fontawesome-webfont.ttf') format('truetype'),
+  url('../fonts/font-awesome-4.6.3/fontawesome-webfont.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
