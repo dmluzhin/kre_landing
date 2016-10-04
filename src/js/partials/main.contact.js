@@ -23,7 +23,11 @@
         $scope.issubFormSended = false;
         $scope.isOrderFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
-        $scope.currentTab = 2;
+        var location = window.location.hash.split('/');
+        if (location[1] === 'city') $scope.currentTab = 2;
+        if (location[1] === 'country') $scope.currentTab = 3;
+        if (location[1] === 'commerc') $scope.currentTab = 4;
+        //$scope.currentTab = 3;
         $scope.params = [];
         $scope.country = [];
         $scope.commerc = [];
@@ -244,3 +248,4 @@
         return this.parentNode.insertBefore(elem, this.nextSibling);
     };
 })();
+
