@@ -11,23 +11,23 @@
 
     var app = angular.module('main', []);
 
-    app.controller('mainController', ['$scope', '$http', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike) {
-
+    app.controller('mainController', ['$scope', '$http', '$cacheFactory', '$httpParamSerializerJQLike', function($scope, $http, $httpParamSerializerJQLike, $cacheFactory) {
+        $scope.AbsentEmployees = {};
         $scope.callbackFormData = {};
         $scope.signFormData = {};
         $scope.orderFormData = {};
-        $scope.subFormData = {}
+        $scope.subFormData = {};
         $scope.barkliBrokerFormData = {};
         $scope.isCallbackFormSended = false;
         $scope.isSignFormSended = false;
         $scope.issubFormSended = false;
         $scope.isOrderFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
+        $scope.currentTab = 2;
         var location = window.location.hash.split('/');
         if (location[1] === 'city') $scope.currentTab = 2;
         if (location[1] === 'country') $scope.currentTab = 3;
         if (location[1] === 'commerc') $scope.currentTab = 4;
-        //$scope.currentTab = 3;
         $scope.params = [];
         $scope.country = [];
         $scope.commerc = [];
@@ -159,7 +159,11 @@
         function sort(obj1, obj2) {
             return obj2.discount - obj1.discount;
         }
-        $http.get('http://www.kre.ru/landing/sale/').success(function(data) {
+
+        var abEmployees = $scope.AbsentEmployees;
+        abEmployees.dataLoaded = false;
+
+        $http.get('http://www.kre.ru/landing/sale/',{cache: true}).success(function(data) {
             data.sort(sort);
             for (var i=0;i<data.length; i+=1) {
                 var currentFlat = data[i];
@@ -187,8 +191,8 @@
                         desc: currentFlat.direction + ', ' + currentFlat.distance+' км от МКАД',
                         head: currentFlat.estate,
                         discount: parseFloat(currentFlat.discount),
-                        square: parseFloat(currentFlat['land_area'])+' сот.' || '',
-                        housearea: (parseFloat(currentFlat['house_area']))? ', '+currentFlat['house_area']+' м²': ' ',
+                        square: (parseFloat(currentFlat['land_area']))? +currentFlat['land_area']+' сот., ': '',
+                        housearea: (parseFloat(currentFlat['house_area']))? ''+currentFlat['house_area']+' м²': '',
                         old_price: addSpaces(parseInt(currentFlat['old_price'])),
                         new_price: addSpaces(parseInt(currentFlat['new_price'])),
                         img: currentFlat.photo,
@@ -209,6 +213,9 @@
                         link: currentFlat.link
                     });
                 }
+                $scope.AbsentEmployees.employees = data;
+                abEmployees.dataLoaded = true;
+
                 $scope.filter = function(items, attr) {
                     var result = {};
                     angular.forEach(items, function(value, key) {

@@ -1,0 +1,38 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(32, 40, 48, 0.8);
+  overflow: hidden;
+  z-index: 1;
+}
+@keyframes clockwise {
+  to {transform: rotate(360deg) translatez(0);}
+}
+.spin {
+  background-color: transparent;
+  width:  10px;
+  height: 10px;
+  border-radius: 100%;
+  box-shadow:
+  12px -12px hsla(0, 0%, 100%, 0.125),
+  17px     0 hsla(0, 0%, 100%, 0.250),
+  12px  12px hsla(0, 0%, 100%, 0.375),
+  0  17px hsla(0, 0%, 100%, 0.500),
+  -12px  12px hsla(0, 0%, 100%, 0.625),
+  -17px     0 hsla(0, 0%, 100%, 0.750),
+  -12px -12px hsla(0, 0%, 100%, 0.875),
+  0 -17px hsla(0, 0%, 100%, 1.000);
+  animation: clockwise 0.75s steps(8, end) infinite;
+  &:before {
+    content: '';
+    box-sizing: border-box;
+  }
+  &:after {
+    content: '';
+    box-sizing: border-box;
+  }
+}
