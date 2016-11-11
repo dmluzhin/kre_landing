@@ -23,6 +23,7 @@
         $scope.issubFormSended = false;
         $scope.isOrderFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
+        $scope.currentTab = 2;
         var location = window.location.hash.split('/');
         if (location[1] === 'city') $scope.currentTab = 2;
         if (location[1] === 'country') $scope.currentTab = 3;
