@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/fonts.css">
 </head>
-<body ng-app="main" ng-controller="mainController">
+<body ng-cloak ng-app="main" ng-controller="mainController">
 	<div class="fixed-header hidden">
 		<div class="l-inner">
 			<a href="/" class="b-logo fixed-logo">
@@ -91,11 +91,12 @@
 				</div>
 			</div>
 		</div>
-<!--		//= templates/request.html-->
-		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 2">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
 			<div class="b-discount_inner" repeat-end="test()">
 				<a ng-repeat="param in filter(params, 'city')" repeat-end="test(1)"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
@@ -144,7 +145,10 @@
 		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 3" repeat-end="test()">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
 			<div class="b-discount_inner">
 				<a ng-repeat="param in filter(params, 'country')" repeat-end="test(2)" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
@@ -193,7 +197,10 @@
 		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 4" repeat-end="test()">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded"	 class="b-discount">
 			<div class="b-discount_inner">
 				<a ng-repeat="param in filter(params, 'commerce')" repeat-end="test(3)" ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">

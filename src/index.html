@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/fonts.css">
 </head>
-<body ng-app="main" ng-controller="mainController">
+<body ng-cloak ng-app="main" ng-controller="mainController">
 	//= templates/fixed-header.html
 	//= templates/head.html
 	<div class="tabs" ng-show="currentTab == 1">
@@ -24,11 +24,12 @@
 				//= templates/cards/all.html
 			</div>
 		</div>
-<!--		//= templates/request.html-->
-		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 2">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
 			<div class="b-discount_inner" repeat-end="test()">
 				//= templates/cards/city.html
 			</div>
@@ -42,7 +43,10 @@
 		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 3" repeat-end="test()">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
 			<div class="b-discount_inner">
 				//= templates/cards/contry.html
 			</div>
@@ -56,7 +60,10 @@
 		</div>
 	</div>
 	<div class="tabs" ng-show="currentTab == 4" repeat-end="test()">
-		<div class="b-discount">
+		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
+			<div class="spin"></div>
+		</div>
+		<div ng-show="AbsentEmployees.dataLoaded"	 class="b-discount">
 			<div class="b-discount_inner">
 				//= templates/cards/commerc.html
 			</div>

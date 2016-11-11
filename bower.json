@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "normalize.css": "*",
-    "jquery": "3.*"
+    "jquery": "3.*",
+    "preloader.css3": "^1.0.2"
   }
 }

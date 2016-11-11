@@ -1,4 +1,5 @@
 .b-discount {
+  position: relative;
   padding: 45px 0;
   background: #fff;
   min-width: 1200px;
@@ -119,6 +120,7 @@
 }
 .b-apartment {
   height: 100%;
+  max-width: 330px;
   display: inline-block;
   box-sizing: border-box;
   padding: 14px;
@@ -131,6 +133,11 @@
     color: white;
     text-align: left;
     padding-bottom: 4px;
+    max-width: 330px;
+    max-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
   }
   &-desc {
     font: 14px 'LatoRegular', Verdana, sans-serif;
@@ -169,4 +176,7 @@
       font-size: 13px;
     }
   }
+}
+.tabs {
+  position: relative;
 }
