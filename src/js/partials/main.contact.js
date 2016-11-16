@@ -23,9 +23,6 @@
         $scope.issubFormSended = false;
         $scope.isOrderFormSended = false;
         $scope.isBarkliBrokerFormSended = false;
-        /*$scope.showCityType = {};
-        $scope.showCoutryType = {};
-        $scope.showCommercType = {};*/
         $scope.currentTab = 2;
         var location = window.location.hash.split('/');
         if (!location[1]) location[1] = 'city';
@@ -37,6 +34,8 @@
         $scope.params = [];
         $scope.country = [];
         $scope.commerc = [];
+
+
 
         /*CALLBACK POPUP START*/
 
@@ -150,7 +149,6 @@
 
         if($scope.currentTab == 2) {
             $http.get('city.json').success(function(data) {
-                console.log('get');
                 data.sort(sort);
                 for(var i = 0; i < data.length; i += 1) {
                     var currentFlat = data[i];
