@@ -85,24 +85,42 @@
   height: 60px;
   left: 0; bottom: 0;
   background-color: $bg-black-80;
+  overflow: hidden;
 
   &-list {
     display: table;
+    border-collapse: collapse;
     margin: 0 auto;
     list-style-type: none;
     height: 100%;
   }
   &-item {
     display: table-cell;
-    padding: 0 22px;
     vertical-align: middle;
+    box-sizing: border-box;
   }
   .element {
     font: 14px 'LatoBold', Verdana, sans-serif;
+    padding: 23px 22px;
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
-    &:hover {text-decoration: underline;}
+    position: relative;
+    &:hover {
+      text-decoration: none;
+      transition: all ease .15s;
+
+      &:before {
+        transition: all ease .15s;
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 5px;
+        background-color: $red;
+        left: 0; bottom: 0; right: 0;
+        margin: auto;
+      }
+    }
   }
   .property-counter {
     font: 14px 'LatoRegular', Verdana, sans-serif;
@@ -110,6 +128,6 @@
   }
 }
 .m-switcher-environment__el_act {
-  text-decoration: underline;
+  background-color: #9d1c20;
   cursor: pointer;
 }

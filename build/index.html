@@ -52,10 +52,10 @@
 		</div>
 		<div class="bottom-nav">
 			<ul class="bottom-nav-list">
-				<li class="bottom-nav-item undisplayable"><a id="all" href="#/all" ng-click="currentTab = 1" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</a></li>
-				<li class="bottom-nav-item"><a id="city" href="#/city" ng-click="currentTab = 2" ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</a></li>
-				<li class="bottom-nav-item"><a id="country" href="#/country" ng-click="currentTab = 3"  ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</a></li>
-				<li class="bottom-nav-item"><a id="commerc" href="#/commerc" ng-click="currentTab = 4" repeat-end="test()" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</a></li>
+				<li class="bottom-nav-item undisplayable"><a id="all" href="#/all" ng-click="currentTab = 1;" ng-class="{'m-switcher-environment__el_act':currentTab == 1}" class="element">все</a></li>
+				<li class="bottom-nav-item"><a id="city" href="#/city" ng-click="currentTab = 2;" ng-class="{'m-switcher-environment__el_act':currentTab == 2}" class="element">Городская</a></li>
+				<li class="bottom-nav-item"><a id="country" href="#/country" ng-click="currentTab = 3;"  ng-class="{'m-switcher-environment__el_act':currentTab == 3}" class="element">Загородная</a></li>
+				<li class="bottom-nav-item"><a id="commerc" href="#/commerc" ng-click="currentTab = 4;" repeat-end="test()" ng-class="{'m-switcher-environment__el_act':currentTab == 4}" class="element">Коммерческая</a></li>
 			</ul>
 		</div>
 	</div>
@@ -92,13 +92,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="tabs" ng-show="currentTab == 2">
+	<div class="tabs" ng-show="currentTab == 2"  repeat-end="test()">
 		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
 			<div class="spin"></div>
 		</div>
 		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
-			<div class="b-discount_inner" repeat-end="test()">
-				<a ng-repeat="param in filter(params, 'city')" repeat-end="test"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
+			<div class="b-discount_inner">
+				<a ng-repeat="param in filter(params, 'city')" repeat-end="test(1)"  ng-href="{{param.link}}" target="_blank" class="b-discount_item">
 					<div class="item-image-holder">
 						<img ng-src="{{param.img}}">
 					</div>
@@ -284,8 +284,8 @@
 	<div class="g-hide">
 		<div class="b-popup j-popup-callback" ng-submit="sendCallbackForm()">
 			<div ng-hide="isCallbackFormSended">
-				<p class="b-title">Перезвоним</p>
-				<p class="b-popup_subtext">в удобное для вас время</p>
+				<p class="b-title">Мы Вам перезвоним</p>
+				<!--<p class="b-popup_subtext">в удобное для вас время</p>-->
 				<form class="b-popup_form" name="callbackForm" novalidate>
 					<input type="text" class="b-popup_input" ng-model="callbackFormData.name" ng-minlength="2" ng-maxlength="20" placeholder="Как вас зовут?" required />
 					<input type="tel" class="b-popup_input j-phone-masked" ng-model="callbackFormData.phone" ng-minlength="10" ng-maxlength="30" placeholder="Ваш телефон?" required />
@@ -295,7 +295,7 @@
 			</div>
 			<div ng-show="isCallbackFormSended">
 				<p class="b-title">Спасибо.</p>
-				<p class="b-popup_subtext">Наш менеджер перезвонит вам в указанное время.</p>
+				<p class="b-popup_subtext">Наш менеджер перезвонит Вам.</p>
 			</div>
 			<div class="b-popup_close j-popup-close"></div>
 		</div>
@@ -332,7 +332,7 @@
 	<div class="g-hide" ng-show="isOrderFormSended">
 		<div class="b-popup j-popup-gratitude-request">
 			<p class="b-title">Спасибо.</p>
-			<p class="b-popup__subtext">Наш менеджер перезвонит вам</p>
+			<p class="b-popup__subtext">Наш менеджер перезвонит Вам</p>
 			<div class="b-popup_close j-popup-close"></div>
 		</div>
 	</div>

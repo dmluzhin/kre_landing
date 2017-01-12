@@ -25,12 +25,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="tabs" ng-show="currentTab == 2">
+	<div class="tabs" ng-show="currentTab == 2"  repeat-end="test()">
 		<div ng-hide="AbsentEmployees.dataLoaded" class="preloader">
 			<div class="spin"></div>
 		</div>
 		<div ng-show="AbsentEmployees.dataLoaded" class="b-discount">
-			<div class="b-discount_inner" repeat-end="test()">
+			<div class="b-discount_inner">
 				//= templates/cards/city.html
 			</div>
 		</div>
