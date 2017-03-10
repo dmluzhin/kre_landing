@@ -50,7 +50,7 @@
                 $scope.callbackFormData['subject'] = 'Заказать обратный звонок. Скидки.';
                 $http({
                     method: 'POST',
-                    url: '/sendmail.php',
+                    url: 'http://www.kre.ru/landing/callme/',
                     data: $httpParamSerializerJQLike($scope.callbackFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
@@ -78,7 +78,7 @@
                 $scope.signFormData['subject'] = 'Подписка на Discount';
                 $http({
                     method: 'POST',
-                    url: '/sendmail.php',
+                    url: 'http://www.kre.ru/landing/callme/',
                     data: $httpParamSerializerJQLike($scope.signFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
@@ -103,7 +103,7 @@
                 $scope.orderFormData['subject'] = 'Заказать обратный звонок. Скидки.';
                 $http({
                     method: 'POST',
-                    url: '/sendmail.php',
+                    url: 'http://www.kre.ru/landing/callme/',
                     data: $httpParamSerializerJQLike($scope.orderFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
@@ -128,7 +128,7 @@
                 $scope.subFormData['subject'] = 'Подписка на Discount';
                 $http({
                     method: 'POST',
-                    url: '/sendmail.php',
+                    url: 'http://www.kre.ru/landing/callme/',
                     data: $httpParamSerializerJQLike($scope.subFormData),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success(function(data) {
